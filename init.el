@@ -8,6 +8,7 @@
 
 (require 'settings)
 (require 'utility-funcs)
+(require 'bindings)
 
 (require 'server)
 (unless (server-running-p)
