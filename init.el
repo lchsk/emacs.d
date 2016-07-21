@@ -4,6 +4,8 @@
 
 (require 'init-elpa)
 
+(require 'packages)
+
 (require 'server)
 (unless (server-running-p)
   (server-start))
