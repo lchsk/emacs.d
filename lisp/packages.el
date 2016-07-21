@@ -2,6 +2,8 @@
 (require-package 'web-mode)
 (require-package 'material-theme)
 (require-package 'rainbow-delimiters)
+(require-package 'expand-region)
+
 (require-package 'helm)
 (require-package 'helm-swoop)
 (require 'helm-swoop)

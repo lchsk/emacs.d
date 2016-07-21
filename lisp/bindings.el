@@ -3,6 +3,7 @@
 (global-set-key (kbd "<C-S-left>")   'buf-move-left)
 (global-set-key (kbd "<C-S-right>")  'buf-move-right)
 
+(global-set-key (kbd "C-=") 'er/expand-region)
 
 ;; Remap C-a to `smarter-move-beginning-of-line'
 (global-set-key [remap move-beginning-of-line]
