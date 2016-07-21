@@ -71,6 +71,8 @@
 (bind-key* "C-c p" 'highlight-symbol-prev)
 (bind-key* "C-c f" 'goto-first-reference)
 
+(global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
+
 (add-hook 'c-mode-common-hook
 		  (lambda()
 			(local-set-key  (kbd "C-c o") 'ff-find-other-file)))

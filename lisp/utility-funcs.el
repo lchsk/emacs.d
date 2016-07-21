@@ -7,16 +7,6 @@
        (rx symbol-start ,(thing-at-point 'symbol) symbol-end))
       (beginning-of-thing 'symbol))))
 
-(defun go-to-speedbar ()
-  (interactive)
-  (let ((f-name (buffer-name)))
-    (sr-speedbar-open)
-    (sr-speedbar-select-window)
-    (goto-line 1)
-    (search-forward-regexp (concat f-name "$"))
-    (speedbar-expand-line)
-    ))
-
 (defun smarter-move-beginning-of-line (arg)
   "Move point back to indentation of beginning of line.
 
@@ -135,5 +125,12 @@ Repeated invocations toggle between the two most recently open buffers."
   "Kill the word at point."
   (interactive)
   (kill-thing-at-point 'word))
+
+(defun kill-back-to-indentation ()
+  "Kill from point back to the first non-whitespace character on the line."
+  (interactive)
+  (let ((prev-pos (point)))
+    (back-to-indentation)
+    (kill-region (point) prev-pos)))
 
 (provide 'utility-funcs)
