@@ -28,6 +28,9 @@
 (bind-key* "C-c b" (lambda () (interactive) (move-to-window-line -1)))
 (bind-key* "C-c m" (lambda () (interactive) (move-to-window-line-middle)))
 
+(global-set-key (kbd "C-c j") 'join-line)
+(global-set-key (kbd "C-c J") (lambda () (interactive) (join-line 1)))
+
 ;;- ---------------------------------------;;
 ;;                                         ;;
 ;;             Helm key bindings           ;;
