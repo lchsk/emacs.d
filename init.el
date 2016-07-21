@@ -5,6 +5,7 @@
 (require 'init-elpa)
 
 (require 'packages)
+(require 'utility-funcs)
 
 (require 'server)
 (unless (server-running-p)
