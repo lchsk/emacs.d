@@ -3,6 +3,7 @@
 (require-package 'material-theme)
 (require-package 'rainbow-delimiters)
 (require-package 'expand-region)
+(require-package 'default-text-scale)
 
 (require-package 'helm)
 (require-package 'helm-swoop)

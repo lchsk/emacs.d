@@ -73,6 +73,9 @@
 
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
+(global-set-key (kbd "C-M-=") 'default-text-scale-increase)
+(global-set-key (kbd "C-M--") 'default-text-scale-decrease)
+
 (add-hook 'c-mode-common-hook
 		  (lambda()
 			(local-set-key  (kbd "C-c o") 'ff-find-other-file)))
