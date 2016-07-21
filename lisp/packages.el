@@ -4,6 +4,7 @@
 (require-package 'rainbow-delimiters)
 (require-package 'expand-region)
 (require-package 'default-text-scale)
+(require-package 'git-timemachine)
 
 (require-package 'helm)
 (require-package 'helm-swoop)
