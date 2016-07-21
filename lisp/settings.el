@@ -1,6 +1,10 @@
 (global-linum-mode 1)
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-echo-area-message t)
+(set-scroll-bar-mode nil)
+
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
 ;;(unless (version<= emacs-version "24.4")
