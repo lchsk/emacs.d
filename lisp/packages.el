@@ -1,7 +1,7 @@
 (require-package 'diff-hl)
 (require-package 'web-mode)
 (require-package 'material-theme)
-(require-package 'rainbow-mode)
+(require-package 'rainbow-delimiters)
 (require-package 'helm)
 (require-package 'helm-swoop)
 (require 'helm-swoop)

@@ -124,6 +124,16 @@ Repeated invocations toggle between the two most recently open buffers."
   (interactive "p")
   (kill-line (- 1 arg)))
 
+(defun kill-thing-at-point (thing)
+  "Kill the `thing-at-point' for the specified kind of THING."
+  (let ((bounds (bounds-of-thing-at-point thing)))
+    (if bounds
+        (kill-region (car bounds) (cdr bounds))
+      (error "No %s at point" thing))))
 
+(defun kill-word-at-point ()
+  "Kill the word at point."
+  (interactive)
+  (kill-thing-at-point 'word))
 
 (provide 'utility-funcs)

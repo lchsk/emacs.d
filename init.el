@@ -5,6 +5,8 @@
 (require 'init-elpa)
 
 (require 'packages)
+
+(require 'settings)
 (require 'utility-funcs)
 
 (require 'server)
