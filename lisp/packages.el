@@ -8,6 +8,7 @@
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
 (require-package 'fuzzy-format)
+(require-package 'highlight-symbol)
 (require 'fuzzy-format)
 
 (require-package 'anzu)
