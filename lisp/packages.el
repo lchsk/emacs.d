@@ -6,6 +6,7 @@
 (require-package 'default-text-scale)
 (require-package 'git-timemachine)
 (require-package 'fill-column-indicator)
+(require-package 'undo-tree)
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
 

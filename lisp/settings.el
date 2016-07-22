@@ -6,6 +6,7 @@
 (set-scroll-bar-mode nil)
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
+(global-undo-tree-mode)
 
 (add-hook 'prog-mode-hook
           (lambda()
