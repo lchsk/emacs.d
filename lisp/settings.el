@@ -3,7 +3,11 @@
 (window-numbering-mode 1)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
+
+(menu-bar-mode -1)
+(tool-bar-mode -1) 
 (set-scroll-bar-mode nil)
+
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
 (global-undo-tree-mode)
