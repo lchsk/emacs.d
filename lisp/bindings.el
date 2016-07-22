@@ -65,9 +65,11 @@
 (bind-key* "C-," 'goto-last-change)
 (bind-key* "C-." 'goto-last-change-reverse)
 
+(bind-key* "C-c h" 'highlight-symbol)
+(bind-key* "C-c R" 'highlight-symbol-remove-all)
+(bind-key* "C-c n" 'highlight-symbol-next)
+(bind-key* "C-c p" 'highlight-symbol-prev)
 (bind-key* "C-c f" 'goto-first-reference)
-(bind-key* "C-c n" 'ahs-forward)
-(bind-key* "C-c p" 'ahs-backward)
 
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 

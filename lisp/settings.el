@@ -7,7 +7,6 @@
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
 (global-undo-tree-mode)
-(global-auto-highlight-symbol-mode t)
 
 (add-hook 'prog-mode-hook
           (lambda()
