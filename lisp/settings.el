@@ -7,7 +7,11 @@
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
 
-(add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
+(add-hook 'prog-mode-hook
+          (lambda()
+            (rainbow-delimiters-mode)
+            (fci-mode)
+             ))
 
 ;;(unless (version<= emacs-version "24.4")
 ;;  (global-prettify-symbols-mode 0))

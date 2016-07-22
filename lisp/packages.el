@@ -5,6 +5,7 @@
 (require-package 'expand-region)
 (require-package 'default-text-scale)
 (require-package 'git-timemachine)
+(require-package 'fill-column-indicator)
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
 
