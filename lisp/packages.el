@@ -5,6 +5,8 @@
 (require-package 'expand-region)
 (require-package 'default-text-scale)
 (require-package 'git-timemachine)
+(require-package 'fuzzy-format)
+(require 'fuzzy-format)
 
 (require-package 'helm)
 (require-package 'helm-swoop)

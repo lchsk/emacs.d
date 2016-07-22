@@ -4,6 +4,7 @@
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
 (set-scroll-bar-mode nil)
+(global-fuzzy-format-mode t)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 
@@ -34,6 +35,7 @@
 ;;			(setq-default py-indent-tabs-mode t)
 			(setq c-basic-offset 4)
 			(rainbow-delimiters-mode 1)
+			(setq python-indent-offset 4)
 			))
 
 (blink-cursor-mode 0)
