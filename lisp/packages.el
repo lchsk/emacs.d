@@ -9,6 +9,8 @@
 (require-package 'undo-tree)
 (require-package 'fuzzy-format)
 (require-package 'highlight-symbol)
+(require-package 'smart-mode-line)
+
 (require 'fuzzy-format)
 
 (require-package 'anzu)
