@@ -5,6 +5,7 @@
 (setq inhibit-startup-echo-area-message t)
 (set-scroll-bar-mode nil)
 (global-fuzzy-format-mode t)
+(global-anzu-mode +1)
 
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
 

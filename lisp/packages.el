@@ -8,6 +8,8 @@
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
 
+(require-package 'anzu)
+
 (require-package 'helm)
 (require-package 'helm-swoop)
 (require 'helm-swoop)
