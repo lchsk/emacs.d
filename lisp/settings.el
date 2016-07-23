@@ -23,6 +23,8 @@
 
 (autopair-global-mode)
 
+(ws-butler-global-mode)
+
 (add-hook 'prog-mode-hook
           (lambda()
             (rainbow-delimiters-mode)

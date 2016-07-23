@@ -7,14 +7,17 @@
 (require-package 'git-timemachine)
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
+
 (require-package 'fuzzy-format)
+(require 'fuzzy-format)
+
 (require-package 'highlight-symbol)
 (require-package 'smart-mode-line)
 
 (require-package 'autopair)
 (require 'autopair)
 
-(require 'fuzzy-format)
+(require-package 'ws-butler)
 
 (require-package 'anzu)
 
