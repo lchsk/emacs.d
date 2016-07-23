@@ -11,6 +11,9 @@
 (require-package 'highlight-symbol)
 (require-package 'smart-mode-line)
 
+(require-package 'autopair)
+(require 'autopair)
+
 (require 'fuzzy-format)
 
 (require-package 'anzu)

@@ -21,6 +21,7 @@
 (setq sml/name-width 30)
 (setq sml/mode-width 'full)
 
+(autopair-global-mode)
 
 (add-hook 'prog-mode-hook
           (lambda()
