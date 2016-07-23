@@ -44,13 +44,16 @@
 (bind-key "M-z" 'helm-mini)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h o") 'helm-occur)
-(bind-key* "C-c i" 'helm-swoop)
+;;(bind-key* "C-c i" 'helm-swoop)
 (bind-key* "M-i" 'helm-multi-swoop-all)
 
 (global-set-key [f1] 'shell)
 (global-set-key [f2] 'rgrep)
 (global-set-key [f3] 'dired-find-file)
 (global-set-key [f6] 'revert-this-buffer)
+
+(bind-key* "C-c o" 'change-outer)
+(bind-key* "C-c i" 'change-inner)
 
 (bind-key* "C-c a" 'auto-complete)
 (bind-key* "C-c d" 'duplicate-line)
@@ -80,7 +83,7 @@
 		  (lambda()
 			(local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
-(global-set-key (kbd "TAB") 'self-insert-command)
+;;(global-set-key (kbd "TAB") 'self-insert-command)
 
 ;; spotify
 (global-set-key (kbd "<pause>") #'spotify-playpause)

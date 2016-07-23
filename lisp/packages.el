@@ -14,6 +14,8 @@
 (require-package 'highlight-symbol)
 (require-package 'smart-mode-line)
 
+(require-package 'change-inner)
+
 (require-package 'autopair)
 (require 'autopair)
 
