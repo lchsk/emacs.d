@@ -75,4 +75,6 @@
                (inhibit-same-window . t)
                (window-height . 0.4)))
 
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (provide 'settings)
