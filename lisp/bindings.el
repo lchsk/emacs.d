@@ -52,7 +52,7 @@
 (global-set-key [f3] 'dired-find-file)
 (global-set-key [f6] 'revert-this-buffer)
 
-(bind-key* "C-c o" 'change-outer)
+(bind-key* "C-c O" 'change-outer)
 (bind-key* "C-c i" 'change-inner)
 
 (bind-key* "C-c a" 'auto-complete)
@@ -80,8 +80,8 @@
 (global-set-key (kbd "C-M--") 'default-text-scale-decrease)
 
 (add-hook 'c-mode-common-hook
-		  (lambda()
-			(local-set-key  (kbd "C-c o") 'ff-find-other-file)))
+  (lambda()
+    (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
 ;;(global-set-key (kbd "TAB") 'self-insert-command)
 
