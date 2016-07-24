@@ -38,7 +38,7 @@
 
 (defvaralias 'js-indent-level 'tab-width)
 (defvaralias 'c-basic-offset 'tab-width)
-;;(setq c-default-style "linux")
+(setq c-default-style "k&r")
 
 (defun my-c-mode-common-hook ()
 ;;  (c-set-offset 'substatement-open 0)
