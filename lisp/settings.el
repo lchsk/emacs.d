@@ -76,5 +76,6 @@
                (window-height . 0.4)))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
+(set-face-attribute 'default nil :height 110)
 
 (provide 'settings)
