@@ -21,6 +21,9 @@
 (setq sml/name-width 30)
 (setq sml/mode-width 'full)
 
+(ac-config-default)
+(setq ac-auto-start nil)
+
 (autopair-global-mode)
 
 (ws-butler-global-mode)

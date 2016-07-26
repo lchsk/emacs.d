@@ -8,6 +8,8 @@
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
 
+(require-package 'auto-complete)
+
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
 
