@@ -19,8 +19,18 @@
 (global-set-key (kbd "M-[") 'previous-buffer)
 (global-set-key (kbd "M-]") 'next-buffer)
 
-(bind-key* "M-n" (lambda () (interactive) (scroll-up-line 5)))
-(bind-key* "M-p" (lambda () (interactive) (scroll-down-line 5)))
+(bind-key* "M-n" (
+                  lambda ()
+                         (interactive)
+                         (scroll-up-line 5)
+                         (move-to-window-line-middle)
+                         ))
+(bind-key* "M-p" (
+                  lambda ()
+                         (interactive)
+                         (scroll-down-line 5)
+                         (move-to-window-line-middle)
+                         ))
 
 (bind-key* "C-c w" (lambda () (interactive) (kill-whole-line)))
 
