@@ -10,6 +10,9 @@
 
 (require-package 'auto-complete)
 
+(require-package 'rich-minority)
+(require 'rich-minority)
+
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
 
