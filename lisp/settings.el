@@ -80,8 +80,9 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (set-face-attribute 'default nil :height 110)
 
+(set-face-background 'mode-line "#1693A5")
+
 (rich-minority-mode 1)
 (setf rm-whitelist "123")
-
 
 (provide 'settings)
