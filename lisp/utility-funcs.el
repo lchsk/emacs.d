@@ -165,7 +165,7 @@ Repeated invocations toggle between the two most recently open buffers."
          (when (eql buffer-read-only t)
              ;; propertize adds metadata to text, so you can add colours and formatting, amongst other things
              (propertize " READ ONLY " 'face
-                         '(:background "color-88" :foreground "white" :weight bold))))
+                         '(:foreground "white" :weight bold))))
         ;; show the buffer filename, with a green background when unmodified/saved and a red one when modified
         (:eval
          (propertize " %b " 'face
@@ -176,9 +176,11 @@ Repeated invocations toggle between the two most recently open buffers."
         (:propertize " %m " face (:background "#6A4A3C" :foreground "white"))
         ;; show the current branch and VCS in use, if there is one
         (:propertize (
-		      (:eval (replace-regexp-in-string "^ Git-" " " vc-mode)) " ")
+		      (:eval (
+			      concat (replace-regexp-in-string "^ Git-" " " vc-mode) " " )))
 		     face (:weight normal :background "#EB6841" :foreground "white"))
         ""
+        ;;	('fuzzy-format-check-space-or-tab)
         ;; show the line number and column number (no 'All', 'Top', 'Bottom', etc.)
         (:propertize " %l:%c " face (:background "#CC333F" :foreground "white" :weight light))))
 
