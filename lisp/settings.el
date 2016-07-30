@@ -75,11 +75,12 @@
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
-(add-to-list 'display-buffer-alist
-             `(,(rx bos "*helm" (* not-newline) "*" eos)
-               (display-buffer-in-side-window)
-               (inhibit-same-window . t)
-               (window-height . 0.4)))
+;; To keep helm window at the bottom: broken
+;;(add-to-list 'display-buffer-alist
+;;             `(,(rx bos "*helm" (* not-newline) "*" eos)
+;;               (display-buffer-in-side-window)
+;;               (inhibit-same-window . t)
+;;               (window-height . 0.4)))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 (set-face-attribute 'default nil :height 110)
@@ -97,5 +98,14 @@
   )
 
 (add-hook 'term-mode-hook 'config-term-mode)
+
+;; Keep helm windows at the bottom using popwin
+(push '("^\*helm.+\*$" :regexp t) popwin:special-display-config)
+(add-hook 'helm-after-initialize-hook (lambda ()
+                                          (popwin:display-buffer helm-buffer t)
+                                          (popwin-mode -1)))
+
+;;  Restore popwin-mode after a Helm session finishes.
+(add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1)))
 
 (provide 'settings)
