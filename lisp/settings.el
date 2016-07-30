@@ -12,6 +12,8 @@
 (global-anzu-mode +1)
 (global-undo-tree-mode)
 
+(setq multi-term-program "/bin/bash")
+
 ;;(setq sml/no-confirm-load-theme t)
 ;;(sml/setup)
 

@@ -84,6 +84,10 @@
 (bind-key* "C-c p" 'highlight-symbol-prev)
 (bind-key* "C-c f" 'goto-first-reference)
 
+(bind-key* "C-c t" 'multi-term)
+(bind-key* "C-c ]" 'multi-term-next)
+(bind-key* "C-c [" 'multi-term-prev)
+
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
 (global-set-key (kbd "C-M-=") 'default-text-scale-increase)
@@ -98,5 +102,7 @@
 ;; spotify
 (global-set-key (kbd "<pause>") #'spotify-playpause)
 (global-set-key (kbd "M-<pause>") #'spotify-next)
+
+
 
 (provide 'bindings)

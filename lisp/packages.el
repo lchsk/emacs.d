@@ -10,6 +10,9 @@
 
 (require-package 'auto-complete)
 
+(require-package 'multi-term)
+(require 'multi-term)
+
 (require-package 'rich-minority)
 (require 'rich-minority)
 
