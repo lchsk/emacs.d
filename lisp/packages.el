@@ -10,6 +10,9 @@
 
 (require-package 'auto-complete)
 
+(require-package 'yaml-mode)
+(require 'yaml-mode)
+
 (require-package 'multi-term)
 (require 'multi-term)
 
