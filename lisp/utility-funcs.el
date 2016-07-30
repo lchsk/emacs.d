@@ -152,9 +152,9 @@ Repeated invocations toggle between the two most recently open buffers."
 (defun my-mode-line-count-lines ()
   (setq my-mode-line-buffer-line-count (int-to-string (count-lines (point-min) (point-max)))))
 
-(add-hook 'find-file-hook 'my-mode-line-count-lines)
-(add-hook 'after-save-hook 'my-mode-line-count-lines)
-(add-hook 'after-revert-hook 'my-mode-line-count-lines)
-(add-hook 'dired-after-readin-hook 'my-mode-line-count-lines)
+;;(add-hook 'find-file-hook 'my-mode-line-count-lines)
+;;(add-hook 'after-save-hook 'my-mode-line-count-lines)
+;;(add-hook 'after-revert-hook 'my-mode-line-count-lines)
+;;(add-hook 'dired-after-readin-hook 'my-mode-line-count-lines)
 
 (provide 'utility-funcs)
