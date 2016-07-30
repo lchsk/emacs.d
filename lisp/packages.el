@@ -13,8 +13,8 @@
 (require-package 'multi-term)
 (require 'multi-term)
 
-(require-package 'rich-minority)
-(require 'rich-minority)
+;;(require-package 'rich-minority)
+;;(require 'rich-minority)
 
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)

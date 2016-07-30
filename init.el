@@ -8,6 +8,7 @@
 
 (require 'settings)
 (require 'utility-funcs)
+(require 'mode-line)
 (require 'bindings)
 
 (require 'server)
