@@ -12,6 +12,8 @@
 (global-anzu-mode +1)
 (global-undo-tree-mode)
 
+(popwin-mode 1)
+
 (setq multi-term-program "/bin/bash")
 
 ;;(setq sml/no-confirm-load-theme t)

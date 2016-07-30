@@ -13,6 +13,9 @@
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
+(require-package 'popwin)
+(require 'popwin)
+
 (require-package 'multi-term)
 (require 'multi-term)
 
