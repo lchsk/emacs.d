@@ -14,7 +14,7 @@
 (require 'fuzzy-format)
 
 (require-package 'highlight-symbol)
-(require-package 'smart-mode-line)
+;;(require-package 'smart-mode-line)
 
 (require-package 'change-inner)
 

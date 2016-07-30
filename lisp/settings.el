@@ -12,9 +12,8 @@
 (global-anzu-mode +1)
 (global-undo-tree-mode)
 
-(setq sml/no-confirm-load-theme t)
-
-(sml/setup)
+;;(setq sml/no-confirm-load-theme t)
+;;(sml/setup)
 
 (setq sml/shorten-directory t)
 (setq sml/shorten-modes t)
