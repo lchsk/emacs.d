@@ -97,6 +97,7 @@
   (lambda()
     (local-set-key  (kbd "C-c o") 'ff-find-other-file)))
 
+(global-set-key [remap kill-whole-line] 'smart-kill-whole-line)
 ;;(global-set-key (kbd "TAB") 'self-insert-command)
 
 ;; spotify

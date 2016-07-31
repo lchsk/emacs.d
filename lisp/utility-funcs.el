@@ -133,6 +133,12 @@ Repeated invocations toggle between the two most recently open buffers."
     (back-to-indentation)
     (kill-region (point) prev-pos)))
 
+(defun smart-kill-whole-line (&optional arg)
+  "A simple wrapper around `kill-whole-line' that respects indentation."
+  (interactive "P")
+  (kill-whole-line arg)
+  (back-to-indentation))
+
 (defvar my-mode-line-buffer-line-count nil)
 (make-variable-buffer-local 'my-mode-line-buffer-line-count)
 
