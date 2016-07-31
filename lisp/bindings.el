@@ -52,10 +52,11 @@
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (bind-key "M-z" 'helm-mini)
+(bind-key "M-m" 'helm-recentf)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-c h o") 'helm-occur)
 ;;(bind-key* "C-c i" 'helm-swoop)
-(bind-key* "M-i" 'helm-multi-swoop-all)
+;;(bind-key* "" 'helm-multi-swoop-all)
 
 (global-set-key [f1] 'multi-term)
 (global-set-key [f2] 'rgrep)

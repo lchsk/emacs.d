@@ -71,7 +71,7 @@
 (global-hl-line-mode 1)
 
 (setq org-replace-disputed-keys t)
-(setq recentf-max-saved-items 50)
+(setq recentf-max-saved-items 100)
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
