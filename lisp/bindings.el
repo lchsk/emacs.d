@@ -57,7 +57,7 @@
 ;;(bind-key* "C-c i" 'helm-swoop)
 (bind-key* "M-i" 'helm-multi-swoop-all)
 
-(global-set-key [f1] 'shell)
+(global-set-key [f1] 'multi-term)
 (global-set-key [f2] 'rgrep)
 (global-set-key [f3] 'dired-find-file)
 (global-set-key [f5] 'revert-this-buffer)
@@ -84,7 +84,6 @@
 (bind-key* "C-c p" 'highlight-symbol-prev)
 (bind-key* "C-c f" 'goto-first-reference)
 
-(bind-key* "C-c t" 'multi-term)
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
