@@ -60,7 +60,7 @@
 (global-set-key [f1] 'shell)
 (global-set-key [f2] 'rgrep)
 (global-set-key [f3] 'dired-find-file)
-(global-set-key [f6] 'revert-this-buffer)
+(global-set-key [f5] 'revert-this-buffer)
 
 (bind-key* "C-c O" 'change-outer)
 (bind-key* "C-c i" 'change-inner)
