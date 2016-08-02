@@ -18,7 +18,7 @@
         (:propertize " %m " face (:background "#6A4A3C" :foreground "white"))
         (:propertize (
 		      (:eval (
-			      concat (replace-regexp-in-string "^ Git-" " " vc-mode) " " )))
+                  concat (replace-regexp-in-string "^ Git[:-]" " " vc-mode) " " )))
 		     face (:weight normal :background "#EB6841" :foreground "white"))
         (:propertize " %l:%c " face (:background "#CC333F" :foreground "white" :weight light))))
 
