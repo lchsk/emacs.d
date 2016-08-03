@@ -20,6 +20,11 @@
 		      (:eval (
                   concat (replace-regexp-in-string "^ Git[:-]" " " vc-mode) " " )))
 		     face (:weight normal :background "#EB6841" :foreground "white"))
+	(:propertize (
+		      (:eval (
+			      format " %s " (vc-state (buffer-file-name (current-buffer)))
+			      )))
+			      face (:weight: bold :background "#CC333F" :foreground "white"))
         (:propertize " %l:%c " face (:background "#CC333F" :foreground "white" :weight light))))
 
 (provide 'mode-line)
