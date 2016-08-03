@@ -86,6 +86,10 @@
 (bind-key* "C-c f" 'goto-first-reference)
 
 (bind-key* "C-c c t" 'toggle-window-split)
+(bind-key* "C-c c g" 'helm-google-suggest)
+(bind-key* "C-c c m" 'make-frame)
+(bind-key* "C-c c d" 'delete-frame)
+
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
