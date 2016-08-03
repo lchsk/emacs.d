@@ -94,6 +94,15 @@
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
+(bind-key* "C-<tab>" 'bury-buffer)
+(bind-key* "C-S-<tab>" 'unbury-buffer)
+
+;; Magit
+(bind-key* "C-x g" 'magit-status)
+
+(bind-key* "C-c G" 'align-entire)
+(bind-key* "C-c R" 'align-regexp)
+
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
 (global-set-key (kbd "C-M-=") 'default-text-scale-increase)
