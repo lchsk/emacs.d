@@ -16,6 +16,8 @@
 
 (setq multi-term-program "/bin/bash")
 
+(setq backup-directory-alist `(("." . "~/.saves")))
+
 ;;(setq sml/no-confirm-load-theme t)
 ;;(sml/setup)
 
