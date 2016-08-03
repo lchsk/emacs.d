@@ -56,6 +56,9 @@
 (require-package 'go-mode)
 (require 'go-mode)
 
+(require-package 'haskell-mode)
+(require 'haskell-mode)
+
 (require 'helm-config)
 
 (load-theme 'material t)
