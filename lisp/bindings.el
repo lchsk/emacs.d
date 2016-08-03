@@ -89,6 +89,7 @@
 (bind-key* "C-c c g" 'helm-google-suggest)
 (bind-key* "C-c c m" 'make-frame)
 (bind-key* "C-c c d" 'delete-frame)
+(bind-key* "C-c c e" 'eval-buffer)
 
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
