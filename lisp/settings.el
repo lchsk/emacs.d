@@ -46,6 +46,8 @@
 (defvaralias 'c-basic-offset 'tab-width)
 (setq c-default-style "k&r")
 
+(add-to-list 'auto-mode-alist '("\\.pks|.pkb\\'" . sql-mode))
+
 (defun my-c-mode-common-hook ()
 ;;  (c-set-offset 'substatement-open 0)
 ;;  (setq c++-tab-always-indent nil)
