@@ -43,7 +43,7 @@ point reaches the beginning or end of the buffer, stop there."
 
 (defun revert-this-buffer ()
   (interactive)
-  (revert-buffer nil t t)
+  (revert-buffer nil t)
   (message (concat "Reverted buffer " (buffer-name))))
 
 (defun ido-recentf-open ()
