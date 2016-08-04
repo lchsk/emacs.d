@@ -61,6 +61,7 @@
 (global-set-key [f1] 'multi-term)
 (global-set-key [f2] 'rgrep)
 (global-set-key [f3] 'dired-find-file)
+(global-set-key [f4] 'run-python)
 (global-set-key [f5] 'revert-this-buffer)
 
 (bind-key* "C-c O" 'change-outer)
@@ -94,11 +95,17 @@
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
+(bind-key* "C-c S" 'smerge-mode)
+(bind-key* "C-c P" 'smerge-prev)
+(bind-key* "C-c N" 'smerge-next)
+
 (bind-key* "C-<tab>" 'bury-buffer)
 (bind-key* "C-S-<tab>" 'unbury-buffer)
 
 ;; Magit
 (bind-key* "C-x g" 'magit-status)
+(bind-key* "C-c b" 'magit-blame)
+(bind-key* "C-c l" 'magit-log-head)
 
 (bind-key* "C-c G" 'align-entire)
 (bind-key* "C-c R" 'align-regexp)
