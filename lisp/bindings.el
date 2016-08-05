@@ -115,6 +115,11 @@
 (global-set-key (kbd "C-M-=") 'default-text-scale-increase)
 (global-set-key (kbd "C-M--") 'default-text-scale-decrease)
 
+;; Windows
+(bind-key* "C-x 3" 'split-window-right-and-rebalance)
+(bind-key* "C-x 2" 'split-window-below-and-rebalance)
+(bind-key* "C-x 0" 'delete-window-and-rebalance)
+
 (add-hook 'c-mode-common-hook
   (lambda()
     (local-set-key  (kbd "C-c o") 'ff-find-other-file)))

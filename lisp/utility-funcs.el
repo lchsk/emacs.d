@@ -139,6 +139,24 @@ Repeated invocations toggle between the two most recently open buffers."
   (kill-whole-line arg)
   (back-to-indentation))
 
+(defun split-window-right-and-rebalance ()
+  (interactive)
+  (split-window-right)
+  (balance-windows)
+  )
+
+(defun split-window-below-and-rebalance ()
+  (interactive)
+  (split-window-below)
+  (balance-windows)
+  )
+
+(defun delete-window-and-rebalance ()
+  (interactive)
+  (delete-window)
+  (balance-windows)
+  )
+
 (defun toggle-window-split ()
   (interactive)
   (if (= (count-windows) 2)
