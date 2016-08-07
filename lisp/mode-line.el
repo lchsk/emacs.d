@@ -1,6 +1,6 @@
 (set-face-background 'mode-line "#EDC951")
 
-(setq-defaultmode-line-format
+(setq-default mode-line-format
  '(
    (:propertize (
                  (:eval(
