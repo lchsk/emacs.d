@@ -25,6 +25,12 @@
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
 
+(require-package 'cmake-mode)
+(require 'cmake-mode)
+
+(require-package 'plsql)
+(require 'plsql)
+
 (require-package 'highlight-symbol)
 ;;(require-package 'smart-mode-line)
 
