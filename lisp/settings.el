@@ -8,6 +8,9 @@
 (tool-bar-mode -1) 
 (set-scroll-bar-mode nil)
 
+;; case-insensitive search
+(setq case-fold-search t)
+
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
 (global-undo-tree-mode)
