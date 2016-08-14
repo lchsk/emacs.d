@@ -32,15 +32,6 @@
                          (move-to-window-line-middle)
                          ))
 
-(bind-key* "C-c w" (lambda () (interactive) (kill-whole-line)))
-
-(bind-key* "C-c t" (lambda () (interactive) (move-to-window-line 0)))
-(bind-key* "C-c b" (lambda () (interactive) (move-to-window-line -1)))
-(bind-key* "C-c m" (lambda () (interactive) (move-to-window-line-middle)))
-
-(global-set-key (kbd "C-c j") 'join-line)
-(global-set-key (kbd "C-c J") (lambda () (interactive) (join-line 1)))
-
 ;;- ---------------------------------------;;
 ;;                                         ;;
 ;;             Helm key bindings           ;;
@@ -54,7 +45,6 @@
 (bind-key "M-z" 'helm-mini)
 (bind-key "M-m" 'helm-recentf)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-c h o") 'helm-occur)
 ;;(bind-key* "C-c i" 'helm-swoop)
 ;;(bind-key* "" 'helm-multi-swoop-all)
 
@@ -63,52 +53,58 @@
 (global-set-key [f3] 'dired-find-file)
 (global-set-key [f4] 'run-python)
 (global-set-key [f5] 'revert-this-buffer)
+(global-set-key [f9] 'make-frame)
+(global-set-key [f10] 'delete-frame)
 
-(bind-key* "C-c O" 'change-outer)
-(bind-key* "C-c i" 'change-inner)
+;; (bind-key* "C-c k b" 'backward-kill-line)
 
-(bind-key* "C-c a" 'auto-complete)
-(bind-key* "C-c d" 'duplicate-line)
-(bind-key* "C-c p" 'switch-to-previous-buffer)
-
-(bind-key* "C-c c l" 'copy-line)
-(bind-key* "C-c k b" 'backward-kill-line)
-(bind-key* "C-c w" 'kill-word-at-point)
-(bind-key* "C-c k i" (lambda() (interactive) (backward-kill-line 1) (indent-relative)))
-(bind-key* "C-c k a" (lambda() (interactive) (smarter-move-beginning-of-line 1) (kill-line)))
+;;(bind-key* "C-c k i" (lambda() (interactive) (backward-kill-line 1) (indent-relative)))
+;;(bind-key* "C-c k a" (lambda() (interactive) (smarter-move-beginning-of-line 1) (kill-line)))
 
 (bind-key* "C-," 'goto-last-change)
 (bind-key* "C-." 'goto-last-change-reverse)
 
-(bind-key* "C-c h" 'highlight-symbol)
-(bind-key* "C-c R" 'highlight-symbol-remove-all)
-(bind-key* "C-c n" 'highlight-symbol-next)
-(bind-key* "C-c p" 'highlight-symbol-prev)
-(bind-key* "C-c f" 'goto-first-reference)
+;;(bind-key* "C-c t" (lambda () (interactive) (move-to-window-line 0)))
+;;(bind-key* "C-c b" (lambda () (interactive) (move-to-window-line -1)))
+;;(bind-key* "C-c m" (lambda () (interactive) (move-to-window-line-middle)))
 
-(bind-key* "C-c c t" 'toggle-window-split)
-(bind-key* "C-c c g" 'helm-google-suggest)
-(bind-key* "C-c c m" 'make-frame)
-(bind-key* "C-c c d" 'delete-frame)
-(bind-key* "C-c c e" 'eval-buffer)
+(bind-key* "C-c a" 'auto-complete)
+(bind-key* "C-c b" 'magit-blame)
+(bind-key* "C-c d" 'duplicate-line)
+(bind-key* "C-c f" 'goto-first-reference)
+(bind-key* "C-c g" 'helm-google-suggest)
+(bind-key* "C-c h" 'highlight-symbol)
+(bind-key* "C-c i" 'change-inner)
+(bind-key* "C-c j" 'join-line)
+
+(bind-key* "C-c n" 'highlight-symbol-next)
+(bind-key* "C-c o" 'helm-occur)
+(bind-key* "C-c p" 'highlight-symbol-prev)
+(bind-key* "C-c l" 'copy-line)
+(bind-key* "C-c w" (lambda () (interactive) (kill-whole-line)))
 
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
+(bind-key* "C-c E" 'eval-buffer)
+(bind-key* "C-c G" 'align-entire)
+(bind-key* "C-c H" 'highlight-symbol-remove-all)
+(bind-key* "C-c J" '(lambda () (interactive) (join-line 1)))
+
+(bind-key* "C-c L" 'magit-log-head)
+(bind-key* "C-c O" 'change-outer)
+(bind-key* "C-c P" 'switch-to-previous-buffer)
+(bind-key* "C-c R" 'align-regexp)
 (bind-key* "C-c S" 'smerge-mode)
-(bind-key* "C-c P" 'smerge-prev)
+(bind-key* "C-c T" 'toggle-window-split)
 (bind-key* "C-c N" 'smerge-next)
+(bind-key* "C-c W" 'kill-word-at-point)
 
 (bind-key* "C-<tab>" 'bury-buffer)
 (bind-key* "C-S-<tab>" 'unbury-buffer)
 
 ;; Magit
 (bind-key* "C-x g" 'magit-status)
-(bind-key* "C-c b" 'magit-blame)
-(bind-key* "C-c l" 'magit-log-head)
-
-(bind-key* "C-c G" 'align-entire)
-(bind-key* "C-c R" 'align-regexp)
 
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
@@ -130,7 +126,5 @@
 ;; spotify
 (global-set-key (kbd "<pause>") #'spotify-playpause)
 (global-set-key (kbd "M-<pause>") #'spotify-next)
-
-
 
 (provide 'bindings)
