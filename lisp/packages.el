@@ -16,6 +16,9 @@
 (require-package 'popwin)
 (require 'popwin)
 
+(require-package 'realgud)
+(require 'realgud)
+
 (require-package 'multi-term)
 (require 'multi-term)
 
