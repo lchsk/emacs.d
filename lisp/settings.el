@@ -115,4 +115,10 @@
 ;;  Restore popwin-mode after a Helm session finishes.
 (add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1)))
 
+;; Org-mode
+
+(set-face-attribute 'org-level-1 nil :weight 'bold   :height 1.2 :foreground "white" :background "#3498db" :box nil)
+(set-face-attribute 'org-level-2 nil :weight 'bold   :height 1.1 :foreground "white" :background "#2ecc71" :box nil)
+(set-face-attribute 'org-level-3 nil :weight 'normal :height 1.1 :foreground "#f1c40f" :background nil     :box nil)
+
 (provide 'settings)
