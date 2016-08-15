@@ -61,6 +61,12 @@ point reaches the beginning or end of the buffer, stop there."
   (setq indent-tabs-mode t)
   )
 
+(defun writing-stuff ()
+  (interactive)
+  (visual-line-mode)
+  (visual-fill-column-mode)
+)
+
 (defun duplicate-line()
   (interactive)
   (move-beginning-of-line 1)
