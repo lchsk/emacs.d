@@ -11,6 +11,8 @@
 ;; case-insensitive search
 (setq case-fold-search t)
 
+(setq-default fci-rule-column 76)
+
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
 (global-undo-tree-mode)
