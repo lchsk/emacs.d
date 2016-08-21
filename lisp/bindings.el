@@ -70,6 +70,7 @@
 
 (bind-key* "C-c a" 'auto-complete)
 (bind-key* "C-c b" 'magit-blame)
+(bind-key* "C-c c" 'helm-occur)
 (bind-key* "C-c d" 'duplicate-line)
 (bind-key* "C-c f" 'goto-first-reference)
 (bind-key* "C-c g" 'helm-google-suggest)
@@ -78,7 +79,6 @@
 (bind-key* "C-c j" 'join-line)
 
 (bind-key* "C-c n" 'highlight-symbol-next)
-(bind-key* "C-c o" 'helm-occur)
 (bind-key* "C-c p" 'highlight-symbol-prev)
 (bind-key* "C-c l" 'copy-line)
 (bind-key* "C-c w" (lambda () (interactive) (kill-whole-line)))
