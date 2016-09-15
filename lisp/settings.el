@@ -19,6 +19,8 @@
 
 (popwin-mode 1)
 
+(helm-flx-mode +1)
+
 (setq multi-term-program "/bin/bash")
 
 (setq backup-directory-alist `(("." . "~/.saves")))

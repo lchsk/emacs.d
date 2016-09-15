@@ -10,6 +10,9 @@
 
 (require-package 'auto-complete)
 
+(require-package 'flx)
+(require-package 'helm-flx)
+
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
