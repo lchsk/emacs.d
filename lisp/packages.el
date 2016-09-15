@@ -13,6 +13,8 @@
 (require-package 'flx)
 (require-package 'helm-flx)
 
+(require-package 'evil)
+
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
