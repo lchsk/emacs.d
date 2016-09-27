@@ -21,6 +21,8 @@
 
 (helm-flx-mode +1)
 
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+
 (setq multi-term-program "/bin/bash")
 
 (setq backup-directory-alist `(("." . "~/.saves")))

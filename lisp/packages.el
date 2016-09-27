@@ -21,6 +21,8 @@
 (require-package 'popwin)
 (require 'popwin)
 
+(require-package 'js2-mode)
+
 (require-package 'realgud)
 (require 'realgud)
 
