@@ -15,6 +15,9 @@
 
 (require-package 'evil)
 
+(require-package 'projectile)
+(require-package 'helm-projectile)
+
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
