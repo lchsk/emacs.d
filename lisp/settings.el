@@ -17,6 +17,8 @@
 (global-anzu-mode +1)
 (global-undo-tree-mode)
 
+(projectile-global-mode)
+
 (popwin-mode 1)
 
 (helm-flx-mode +1)
