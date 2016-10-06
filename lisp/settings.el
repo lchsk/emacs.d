@@ -11,7 +11,7 @@
 ;; case-insensitive search
 (setq case-fold-search t)
 
-(setq-default fci-rule-column 76)
+(setq-default fci-rule-column 80)
 
 (global-fuzzy-format-mode t)
 (global-anzu-mode +1)
@@ -99,7 +99,7 @@
 ;;               (window-height . 0.4)))
 
 (defalias 'yes-or-no-p 'y-or-n-p)
-(set-face-attribute 'default nil :height 110)
+(set-face-attribute 'default nil :height 109)
 
 ;;(rich-minority-mode 1)
 ;;(setf rm-whitelist "123")
