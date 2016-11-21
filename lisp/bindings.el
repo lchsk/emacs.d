@@ -87,6 +87,7 @@
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
+(bind-key* "C-c C" 'calendar)
 (bind-key* "C-c E" 'eval-buffer)
 (bind-key* "C-c G" 'align-entire)
 (bind-key* "C-c H" 'highlight-symbol-remove-all)
