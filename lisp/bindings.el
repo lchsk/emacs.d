@@ -56,17 +56,8 @@
 (global-set-key [f9] 'make-frame)
 (global-set-key [f10] 'delete-frame)
 
-;; (bind-key* "C-c k b" 'backward-kill-line)
-
-;;(bind-key* "C-c k i" (lambda() (interactive) (backward-kill-line 1) (indent-relative)))
-;;(bind-key* "C-c k a" (lambda() (interactive) (smarter-move-beginning-of-line 1) (kill-line)))
-
 (bind-key* "C-," 'goto-last-change)
 (bind-key* "C-." 'goto-last-change-reverse)
-
-;;(bind-key* "C-c t" (lambda () (interactive) (move-to-window-line 0)))
-;;(bind-key* "C-c b" (lambda () (interactive) (move-to-window-line -1)))
-;;(bind-key* "C-c m" (lambda () (interactive) (move-to-window-line-middle)))
 
 (bind-key* "C-c a" 'auto-complete)
 (bind-key* "C-c b" 'magit-blame)
