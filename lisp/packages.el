@@ -18,6 +18,8 @@
 (require-package 'projectile)
 (require-package 'helm-projectile)
 
+(require-package 'iedit)
+
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
