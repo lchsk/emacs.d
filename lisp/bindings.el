@@ -32,6 +32,19 @@
                          (move-to-window-line-middle)
                          ))
 
+(bind-key* "C-v" (
+                  lambda ()
+                         (interactive)
+                         (scroll-up-command)
+                         (move-to-window-line-middle)
+                         ))
+(bind-key* "M-v" (
+                  lambda ()
+                         (interactive)
+                         (scroll-down-command)
+                         (move-to-window-line-middle)
+                         ))
+
 ;;- ---------------------------------------;;
 ;;                                         ;;
 ;;             Helm key bindings           ;;
