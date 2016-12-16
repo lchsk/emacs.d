@@ -51,7 +51,8 @@
           (lambda()
             (rainbow-delimiters-mode)
             (fci-mode)
-             ))
+            (subword-mode)
+	    ))
 
 ;;(unless (version<= emacs-version "24.4")
 ;;  (global-prettify-symbols-mode 0))
