@@ -8,6 +8,8 @@
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
 
+(require-package 'flycheck)
+
 (require-package 'auto-complete)
 
 (require-package 'flx)

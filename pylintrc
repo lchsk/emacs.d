@@ -1,0 +1,7 @@
+[MESSAGES CONTROL]
+# W0311: Bad indentation. Found %s %s, expected %s
+# W0312: Found indentation with %ss instead of %ss
+# E1101: %s %r has no %r member
+# C0330: Wrong hanging indentation.
+
+disable=E1101, W0311, W0312, C0330

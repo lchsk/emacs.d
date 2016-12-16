@@ -84,7 +84,13 @@
 			(setq c-basic-offset 4)
 			(rainbow-delimiters-mode 1)
 			(setq python-indent-offset 4)
+			(flycheck-mode 1)
+			(setq flycheck-checker 'python-pylint
+			      flycheck-checker-error-threshold 300
+			      flycheck-pylintrc "~/.emacs.d/pylintrc")
 			))
+
+
 
 (blink-cursor-mode 0)
 (global-hl-line-mode 1)
