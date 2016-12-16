@@ -90,7 +90,7 @@
 			      flycheck-pylintrc "~/.emacs.d/pylintrc")
 			))
 
-
+(setq flycheck-display-errors-delay 0)
 
 (blink-cursor-mode 0)
 (global-hl-line-mode 1)
