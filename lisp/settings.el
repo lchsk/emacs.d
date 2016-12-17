@@ -84,12 +84,14 @@
 			(setq c-basic-offset 4)
 			(rainbow-delimiters-mode 1)
 			(setq python-indent-offset 4)
+			(jedi:setup)
 			(flycheck-mode 1)
 			(setq flycheck-checker 'python-pylint
 			      flycheck-checker-error-threshold 300
 			      flycheck-pylintrc "~/.emacs.d/pylintrc")
 			))
 
+;;(setq jedi:complete-on-dot t) 
 (setq flycheck-display-errors-delay 0)
 
 (blink-cursor-mode 0)

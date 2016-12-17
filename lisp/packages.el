@@ -10,7 +10,8 @@
 
 (require-package 'flycheck)
 
-(require-package 'auto-complete)
+(require-package 'jedi)
+;;(require-package 'auto-complete)
 
 (require-package 'flx)
 (require-package 'helm-flx)
