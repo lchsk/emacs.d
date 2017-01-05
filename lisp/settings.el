@@ -57,7 +57,7 @@
 ;;(unless (version<= emacs-version "24.4")
 ;;  (global-prettify-symbols-mode 0))
 
-(setq tab-width 4)
+(setq-default tab-width 4)
 
 (defvaralias 'js-indent-level 'tab-width)
 (defvaralias 'c-basic-offset 'tab-width)
@@ -65,6 +65,10 @@
 
 (add-to-list 'auto-mode-alist '("\\.pkb\\'" . sql-mode))
 (add-to-list 'auto-mode-alist '("\\.pks\\'" . sql-mode))
+
+(add-hook 'sql-mode-hook
+	  (lambda ()
+	    (setq tab-width 4)))
 
 (defun my-c-mode-common-hook ()
 ;;  (c-set-offset 'substatement-open 0)
@@ -79,9 +83,7 @@
 
 (add-hook 'python-mode-hook
 		  (lambda ()
-;;			(setq-default indent-tabs-mode t)
 			(setq-default tab-width 4)
-;;			(setq-default py-indent-tabs-mode t)
 			(setq c-basic-offset 4)
 			(rainbow-delimiters-mode 1)
 			(setq python-indent-offset 4)
