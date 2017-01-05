@@ -55,8 +55,8 @@
 (bind-key* "M-q" (lambda () (interactive) (helm-imenu)))
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(bind-key "M-z" 'helm-mini)
-(bind-key "M-m" 'helm-projectile)
+(bind-key "M-m" 'helm-mini)
+(bind-key "M-z" 'helm-projectile)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;;(bind-key* "C-c i" 'helm-swoop)
 ;;(bind-key* "" 'helm-multi-swoop-all)
