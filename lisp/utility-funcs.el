@@ -256,4 +256,14 @@ Repeated invocations toggle between the two most recently open buffers."
 ;;(add-hook 'after-revert-hook 'my-mode-line-count-lines)
 ;;(add-hook 'dired-after-readin-hook 'my-mode-line-count-lines)
 
+(defun tabs-mode ()
+  (interactive)
+  (setq indent-tabs-mode t))
+
+(defun save-buffer-tabs ()
+  (interactive)
+  (setq indent-tabs-mode t)
+  (save-buffer)
+  (setq indent-tabs-mode t))
+
 (provide 'utility-funcs)
