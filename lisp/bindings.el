@@ -81,7 +81,8 @@
 (bind-key* "C-c h" 'highlight-symbol)
 (bind-key* "C-c i" 'change-inner)
 (bind-key* "C-c j" 'join-line)
-
+(bind-key* "C-c t" 'tabs-mode)
+(bind-key* "C-c k" 'kill-word-at-point)
 (bind-key* "C-c s" 'fixup-whitespace)
 (bind-key* "C-c n" 'highlight-symbol-next)
 (bind-key* "C-c p" 'highlight-symbol-prev)
@@ -105,8 +106,7 @@
 (bind-key* "C-c S" 'smerge-mode)
 (bind-key* "C-c T" 'toggle-window-split)
 (bind-key* "C-c N" 'smerge-next)
-(bind-key* "C-c W" 'kill-word-at-point)
-
+(bind-key* "C-c W" 'save-buffer-tabs)
 
 (bind-key* "C-<tab>" 'bury-buffer)
 (bind-key* "C-S-<tab>" 'unbury-buffer)
