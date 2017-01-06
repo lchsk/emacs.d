@@ -47,11 +47,13 @@
 
 (ws-butler-global-mode)
 
+(global-subword-mode)
+
 (add-hook 'prog-mode-hook
           (lambda()
             (rainbow-delimiters-mode)
             (fci-mode)
-            (subword-mode)
+            ;; (subword-mode)
 	    ))
 
 ;;(unless (version<= emacs-version "24.4")
