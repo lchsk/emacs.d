@@ -84,14 +84,6 @@ point reaches the beginning or end of the buffer, stop there."
       (message "Opening file...")
     (message "Aborting")))
 
-(defun this-is-sql ()
-  (interactive)
-  (fuzzy-format-mode nil)
-  (sql-mode)
-  (whitespace-mode 1)
-  (setq indent-tabs-mode t)
-  )
-
 (defun writing-stuff ()
   (interactive)
   (visual-line-mode)
