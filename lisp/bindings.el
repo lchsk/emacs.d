@@ -9,9 +9,7 @@
 (global-set-key [remap move-beginning-of-line]
                 'smarter-move-beginning-of-line)
 
-;; TODO: Merge those two
-(bind-key* "M-;" 'toggle-comment-on-line)
-(bind-key* "C-c ;" 'comment-or-uncomment-region)
+(bind-key* "M-;" 'comment-or-uncomment-region-or-line)
 
 (global-set-key (kbd "M-o") 'other-window)
 

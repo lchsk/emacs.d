@@ -72,11 +72,6 @@ point reaches the beginning or end of the buffer, stop there."
   (end-of-line) ; move to end of line
   (set-mark (line-beginning-position)))
 
-(defun toggle-comment-on-line ()
-  "Comment or uncomment current line"
-  (interactive)
-  (comment-or-uncomment-region (line-beginning-position) (line-end-position)))
-
 (defun revert-this-buffer ()
   (interactive)
   (revert-buffer nil t)
@@ -266,4 +261,13 @@ Repeated invocations toggle between the two most recently open buffers."
   (save-buffer)
   (setq indent-tabs-mode t))
 
+(defun comment-or-uncomment-region-or-line ()
+    "Comments or uncomments the region or the current line if there's no active region."
+    (interactive)
+    (let (beg end)
+        (if (region-active-p)
+            (setq beg (region-beginning) end (region-end))
+            (setq beg (line-beginning-position) end (line-end-position)))
+        (comment-or-uncomment-region beg end)
+        (next-line)))
 (provide 'utility-funcs)
