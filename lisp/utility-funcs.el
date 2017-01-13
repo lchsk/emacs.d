@@ -124,7 +124,7 @@ point reaches the beginning or end of the buffer, stop there."
 	(if (eq last-command 'copy-line)
 		(kill-append (buffer-substring beg end) (< end beg))
 	  (kill-ring-save beg end)))
-  (kill-append "\n" nil)
+  (kill-append "" nil)
   (beginning-of-line (or (and arg (1+ arg)) 2))
   (if (and arg (not (= 1 arg))) (message "%d lines copied" arg)))
 
