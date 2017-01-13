@@ -19,18 +19,18 @@
 (global-set-key (kbd "M-[") 'previous-buffer)
 (global-set-key (kbd "M-]") 'next-buffer)
 
-(bind-key* "M-n" (
-                  lambda ()
-                         (interactive)
-                         (scroll-up-line 5)
-                         (move-to-window-line-middle)
-                         ))
-(bind-key* "M-p" (
-                  lambda ()
-                         (interactive)
-                         (scroll-down-line 5)
-                         (move-to-window-line-middle)
-                         ))
+;; (bind-key* "M-n" (
+                  ;; lambda ()
+                         ;; (interactive)
+                         ;; (scroll-up-line 5)
+                         ;; (move-to-window-line-middle)
+                         ;; ))
+;; (bind-key* "M-p" (
+                  ;; lambda ()
+                         ;; (interactive)
+                         ;; (scroll-down-line 5)
+                         ;; (move-to-window-line-middle)
+                         ;; ))
 
 (bind-key* "C-v" (
                   lambda ()
@@ -57,6 +57,7 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (bind-key "M-m" 'helm-mini)
 (bind-key "M-z" 'helm-projectile)
+(bind-key "M-p" 'helm-recentf)
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 ;;(bind-key* "C-c i" 'helm-swoop)
 ;;(bind-key* "" 'helm-multi-swoop-all)
