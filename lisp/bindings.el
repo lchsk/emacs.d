@@ -84,7 +84,7 @@
 (bind-key* "C-c g" 'helm-google-suggest)
 (bind-key* "C-c h" 'highlight-symbol)
 (bind-key* "C-c i" 'change-inner)
-(bind-key* "C-c j" 'join-line)
+(bind-key* "C-j" 'join-line)
 (bind-key* "C-c t" 'tabs-mode)
 (bind-key* "C-c k" 'kill-word-at-point)
 (bind-key* "C-c s" 'fixup-whitespace)
