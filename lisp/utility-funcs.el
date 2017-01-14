@@ -66,7 +66,7 @@ point reaches the beginning or end of the buffer, stop there."
     (when (= orig-point (point))
       (move-beginning-of-line 1))))
 
-(defun select-current-line ()
+(defun mark-current-line ()
   "Select the current line"
   (interactive)
   (end-of-line) ; move to end of line
