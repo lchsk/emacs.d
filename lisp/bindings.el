@@ -68,8 +68,13 @@
 (global-set-key [f9] 'make-frame)
 (global-set-key [f10] 'delete-frame)
 
-(bind-key* "C-," 'goto-last-change)
-(bind-key* "C-." 'goto-last-change-reverse)
+;; (bind-key* "C-," 'goto-last-change)
+;; (bind-key* "C-." 'goto-last-change-reverse)
+(bind-key* "C-," 'mark-word)
+(bind-key* "C-." 'mark-current-line)
+(bind-key* "C-<" 'mark-end-of-sentence)
+(bind-key* "C->" 'mark-sexp)
+
 
 (bind-key* "C-c a" 'ac-complete-with-helm)
 (bind-key* "C-c b" 'magit-blame)
@@ -102,9 +107,9 @@
 (bind-key* "C-c O" 'change-outer)
 (bind-key* "C-c P" 'switch-to-previous-buffer)
 (bind-key* "C-c R" 'align-regexp)
-(bind-key* "C-c S" 'smerge-mode)
+;; (bind-key* "C-c S" 'smerge-mode)
 (bind-key* "C-c T" 'toggle-window-split)
-(bind-key* "C-c N" 'smerge-next)
+;; (bind-key* "C-c N" 'smerge-next)
 (bind-key* "C-c W" 'save-buffer-tabs)
 
 (bind-key* "C-<tab>" 'bury-buffer)
