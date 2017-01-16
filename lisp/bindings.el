@@ -14,8 +14,12 @@
 (global-set-key (kbd "M-o") 'other-window)
 
 (global-set-key (kbd "C-x w") 'whitespace-mode)
-(global-set-key (kbd "M-[") 'previous-buffer)
-(global-set-key (kbd "M-]") 'next-buffer)
+(global-set-key (kbd "M-[") 'forward-paragraph)
+(global-set-key (kbd "M-]") 'backward-paragraph)
+(global-set-key (kbd "M-{") 'forward-sexp)
+(global-set-key (kbd "M-}") 'backward-sexp)
+(global-set-key (kbd "C-c N") 'next-buffer)
+(global-set-key (kbd "C-c P") 'previous-buffer)
 
 ;; (bind-key* "M-n" (
                   ;; lambda ()
@@ -105,7 +109,7 @@
 
 (bind-key* "C-c L" 'magit-log-head)
 (bind-key* "C-c O" 'change-outer)
-(bind-key* "C-c P" 'switch-to-previous-buffer)
+;; (bind-key* "C-c P" 'switch-to-previous-buffer)
 (bind-key* "C-c R" 'align-regexp)
 ;; (bind-key* "C-c S" 'smerge-mode)
 (bind-key* "C-c T" 'toggle-window-split)
