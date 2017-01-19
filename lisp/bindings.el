@@ -96,7 +96,7 @@
 (bind-key* "C-c p" 'highlight-symbol-prev)
 (bind-key* "C-c r" 'replace-string)
 (bind-key* "C-c l" 'copy-line)
-(bind-key* "C-c w" (lambda () (interactive) (kill-whole-line)))
+(bind-key* "C-c W" (lambda () (interactive) (kill-whole-line)))
 
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
@@ -114,7 +114,7 @@
 ;; (bind-key* "C-c S" 'smerge-mode)
 (bind-key* "C-c T" 'toggle-window-split)
 ;; (bind-key* "C-c N" 'smerge-next)
-(bind-key* "C-c W" 'save-buffer-tabs)
+(bind-key* "C-c w" 'save-buffer-tabs)
 
 (bind-key* "C-<tab>" 'bury-buffer)
 (bind-key* "C-S-<tab>" 'unbury-buffer)
