@@ -140,6 +140,9 @@
 ;;  Restore popwin-mode after a Helm session finishes.
 (add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1)))
 
+(load "server")
+(unless (server-running-p) (server-start))
+
 ;; Org-mode
 
 (set-face-attribute 'org-level-1 nil :weight 'bold   :height 1.2 :foreground "white" :background "#3498db" :box nil)
