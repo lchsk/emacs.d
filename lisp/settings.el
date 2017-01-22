@@ -130,6 +130,11 @@
 (load "server")
 (unless (server-running-p) (server-start))
 
+(add-hook
+ 'dired-mode-hook
+ (lambda()
+   (define-key dired-mode-map "j" 'ido-find-file)))
+
 ;; Org-mode
 
 (set-face-attribute 'org-level-1 nil :weight 'bold   :height 1.2 :foreground "white" :background "#3498db" :box nil)
