@@ -121,8 +121,8 @@
 
 (global-set-key (kbd "<C-up>") 'shrink-window)
 (global-set-key (kbd "<C-down>") 'enlarge-window)
-(global-set-key (kbd "<C-left>") 'shrink-window-horizontally)
-(global-set-key (kbd "<C-right>") 'enlarge-window-horizontally)
+(global-set-key (kbd "<C-return>") 'shrink-window-horizontally)
+(global-set-key (kbd "<C-M-return>") 'enlarge-window-horizontally)
 
 ;; Magit
 (bind-key* "C-x g" 'magit-status)
