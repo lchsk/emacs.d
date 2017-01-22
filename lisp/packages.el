@@ -89,4 +89,11 @@
 
 (load-theme 'material t)
 
+(add-hook 'after-make-frame-functions
+          '(lambda (frame)
+	     (select-frame frame)
+	     (if (display-graphic-p)
+		 nil
+	       (set-frame-parameter nil 'background-color "black"))))
+
 (provide 'packages)
