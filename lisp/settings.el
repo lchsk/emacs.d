@@ -138,8 +138,43 @@
 
 ;; Org-mode
 
-(set-face-attribute 'org-level-1 nil :weight 'bold   :height 1.2 :foreground "white" :background "#3498db" :box nil)
-(set-face-attribute 'org-level-2 nil :weight 'bold   :height 1.1 :foreground "white" :background "#2ecc71" :box nil)
-(set-face-attribute 'org-level-3 nil :weight 'normal :height 1.1 :foreground "#f1c40f" :background nil     :box nil)
+(set-language-environment 'utf-8)
+(setq locale-coding-system 'utf-8)
+(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+
+(prefer-coding-system 'utf-8)
+(setq default-file-name-coding-system 'utf-8)
+(set-default-coding-systems 'utf-8)
+(set-terminal-coding-system 'utf-8)
+(set-keyboard-coding-system 'utf-8)
+
+(if (boundp buffer-file-coding-system)
+    (setq buffer-file-coding-system 'utf-8)
+  (setq default-buffer-file-coding-system 'utf-8))
+
+(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
+
+(setq org-bullets-bullet-list '("⚫" "⚪" "❍" "○" "☉" "◎" "◉" "○" "◌" "◎" "●" "◦" "◯"  "⚬" "⊙" "⊚" "⊛" "∙" "∘"))
+
+(setq org-ellipsis " ➜")
+
+(set-face-attribute 'org-level-1 nil
+                    :weight 'bold
+                    :height 1.0
+                    :foreground "#f1c40f"
+                    :background "transparent"
+                    :box nil)
+(set-face-attribute 'org-level-2 nil
+                    :weight 'normal
+                    :height 1.0
+                    :foreground "#2ecc71"
+                    :background "transparent"
+                    :box nil)
+(set-face-attribute 'org-level-3 nil
+                    :weight 'normal
+                    :height 1.0
+                    :foreground "#ffffff"
+                    :background "transparent"
+                    :box nil)
 
 (provide 'settings)
