@@ -11,6 +11,7 @@
 (require-package 'flycheck)
 
 (require-package 'visual-regexp-steroids)
+(require-package 'ido-vertical-mode)
 
 (require-package 'jedi)
 ;;(require-package 'auto-complete)

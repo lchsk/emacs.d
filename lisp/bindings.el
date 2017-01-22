@@ -59,8 +59,11 @@
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (bind-key "M-m" 'helm-mini)
 (bind-key "M-z" 'helm-projectile)
-(bind-key "M-p" 'helm-recentf)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (bind-key "M-p" 'helm-recentf)
+(bind-key "M-p" 'ido-recentf-open)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "C-x C-f") 'ido-find-file)
+(bind-key "C-x d" 'ido-dired)
 ;;(bind-key* "C-c i" 'helm-swoop)
 ;;(bind-key* "" 'helm-multi-swoop-all)
 

@@ -9,6 +9,11 @@
 (tool-bar-mode -1) 
 (set-scroll-bar-mode nil)
 
+(ido-mode 1)
+(ido-vertical-mode 1)
+(setq ido-vertical-define-keys 'C-n-and-C-p-only)
+(setq ido-vertical-show-count t)
+
 ;; case-insensitive search
 (setq case-fold-search t)
 
