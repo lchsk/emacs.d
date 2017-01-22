@@ -10,8 +10,11 @@
 
 (require-package 'flycheck)
 
-(require-packages 'org-bullets)
+(require-package 'org-bullets)
 (require 'org-bullets)
+
+(require-package 'multiple-cursors)
+(require 'multiple-cursors)
 
 (require-package 'visual-regexp-steroids)
 (require-package 'ido-vertical-mode)
