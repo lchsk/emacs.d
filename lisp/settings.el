@@ -24,6 +24,7 @@
 (global-undo-tree-mode)
 
 (projectile-global-mode)
+(recentf-mode)
 
 (popwin-mode 1)
 
