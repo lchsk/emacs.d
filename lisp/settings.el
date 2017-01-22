@@ -1,18 +1,21 @@
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
 (setq inhibit-startup-screen t)
+(setq initial-scratch-message nil)
 (setq inhibit-startup-echo-area-message t)
 
 (setq-default tab-width 4)
 
 (menu-bar-mode -1)
-(tool-bar-mode -1) 
+(tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
 (ido-mode 1)
 (ido-vertical-mode 1)
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (setq ido-vertical-show-count t)
+
+(setq calendar-week-start-day 1)
 
 ;; case-insensitive search
 (setq case-fold-search t)
