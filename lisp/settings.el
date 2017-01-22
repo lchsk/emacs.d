@@ -1,8 +1,9 @@
-(global-linum-mode 1)
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
+
+(setq-default tab-width 4)
 
 (menu-bar-mode -1)
 (tool-bar-mode -1) 
@@ -32,14 +33,6 @@
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-;;(setq sml/no-confirm-load-theme t)
-;;(sml/setup)
-
-(setq sml/shorten-directory t)
-(setq sml/shorten-modes t)
-(setq sml/name-width 30)
-(setq sml/mode-width 'full)
-
 (ac-config-default)
 (setq ac-auto-start nil)
 
@@ -53,13 +46,7 @@
           (lambda()
             (rainbow-delimiters-mode)
             (fci-mode)
-            ;; (subword-mode)
-	    ))
-
-;;(unless (version<= emacs-version "24.4")
-;;  (global-prettify-symbols-mode 0))
-
-(setq-default tab-width 4)
+            (linum-mode)))
 
 (defvaralias 'js-indent-level 'tab-width)
 (defvaralias 'c-basic-offset 'tab-width)
@@ -69,8 +56,8 @@
 (add-to-list 'auto-mode-alist '("\\.pks\\'" . sql-mode))
 
 (add-hook 'sql-mode-hook
-	  (lambda ()
-	    (setq tab-width 4)))
+          (lambda ()
+            (setq tab-width 4)))
 
 (defun my-c-mode-common-hook ()
 ;;  (c-set-offset 'substatement-open 0)
@@ -84,19 +71,18 @@
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (add-hook 'python-mode-hook
-		  (lambda ()
-			(setq-default tab-width 4)
-			(setq c-basic-offset 4)
-			(rainbow-delimiters-mode 1)
-			(setq python-indent-offset 4)
-			(jedi:setup)
-			(flycheck-mode 1)
-			(setq flycheck-checker 'python-pylint
-			      flycheck-checker-error-threshold 300
-			      flycheck-pylintrc "~/.emacs.d/pylintrc")
-			))
+          (lambda ()
+            (setq-default tab-width 4)
+            (setq c-basic-offset 4)
+            (rainbow-delimiters-mode 1)
+            (setq python-indent-offset 4)
+            (jedi:setup)
+            (flycheck-mode 1)
+            (setq flycheck-checker 'python-pylint
+                  flycheck-checker-error-threshold 300
+                  flycheck-pylintrc "~/.emacs.d/pylintrc")
+            ))
 
-;;(setq jedi:complete-on-dot t) 
 (setq flycheck-display-errors-delay 0)
 
 (blink-cursor-mode 0)
@@ -117,17 +103,13 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 (set-face-attribute 'default nil :height 109)
 
-;;(rich-minority-mode 1)
-;;(setf rm-whitelist "123")
-
 (setq frame-title-format
-  '("" invocation-name ": "(:eval (if (buffer-file-name)
-                (abbreviate-file-name (buffer-file-name))
-		"%b"))))
+      '("" invocation-name ": "(:eval (if (buffer-file-name)
+          (abbreviate-file-name (buffer-file-name))
+          "%b"))))
 
 (defun config-term-mode ()
-  (linum-mode 0)
-  )
+  (linum-mode 0))
 
 (add-hook 'term-mode-hook 'config-term-mode)
 
