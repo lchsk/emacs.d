@@ -24,6 +24,9 @@
 
 (require-package 'flx)
 (require-package 'helm-flx)
+(require-package 'flx-ido)
+
+(require 'flx-ido)
 
 (require-package 'evil)
 
