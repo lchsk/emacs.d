@@ -54,7 +54,7 @@
 ;;-----------------------------------------;;
 
 (global-set-key (kbd "M-x") 'helm-M-x)
-(bind-key* "M-q" (lambda () (interactive) (helm-imenu)))
+(bind-key* "M-q" (lambda () (interactive) (ido-imenu)))
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (bind-key "M-m" 'helm-mini)
@@ -122,7 +122,7 @@
 (bind-key* "C-<tab>" 'bury-buffer)
 (bind-key* "C-S-<tab>" 'unbury-buffer)
 
-(bind-key* "M-n m" 'mc/edit-lines)
+(bind-key* "M-n e" 'mc/edit-lines)
 (bind-key* "M-n n" 'mc/mark-next-like-this)
 (bind-key* "M-n p" 'mc/mark-previous-like-this)
 (bind-key* "M-n a" 'mc/mark-all-like-this)
