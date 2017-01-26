@@ -3,5 +3,9 @@
 # W0312: Found indentation with %ss instead of %ss
 # E1101: %s %r has no %r member
 # C0330: Wrong hanging indentation.
+# C0326: No space allowed before bracket etc.
+# C0103: Invalid %s name "%s"
+# C0111: Missing %s docstring
+# F0401: Unable to import %s
 
-disable=E1101, W0311, W0312, C0330
+disable=E1101, C0326, C0103, C0111, W0311, W0312, C0330, F0401
