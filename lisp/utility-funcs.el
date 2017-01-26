@@ -253,57 +253,70 @@ Repeated invocations toggle between the two most recently open buffers."
   (save-buffer)
   (setq indent-tabs-mode t))
 
-(defun ido-imenu ()
-  "Update the imenu index and then use ido to select a symbol to navigate to.
-Symbols matching the text at point are put first in the completion list."
+(defun ido-imenu-anywhere ()
+  "IDO interface for `imenu-anywhere'.
+This is a simple wrapper around `imenu-anywhere' which uses
+`ido-completing-read' as `completing-read-function'. If you use
+`ido-ubiquitous' you might be better off by using `ido-anywhere'
+instead, but there should be little or no difference."
   (interactive)
-  (imenu--make-index-alist)
-  (let ((name-and-pos '())
-        (symbol-names '()))
-    (flet ((addsymbols
-            (symbol-list)
-            (when (listp symbol-list)
-              (dolist (symbol symbol-list)
-                (let ((name nil) (position nil))
-                  (cond
-                   ((and (listp symbol) (imenu--subalist-p symbol))
-                    (addsymbols symbol))
+  (require 'ido)
+  (let ((imenu-anywhere-preprocess-entry-function #'imenu-anywhere-preprocess-for-completion)
+        (completing-read-function 'ido-completing-read))
+    (imenu-anywhere)))
 
-                   ((listp symbol)
-                    (setq name (car symbol))
-                    (setq position (cdr symbol)))
 
-                   ((stringp symbol)
-                    (setq name symbol)
-                    (setq position
-                          (get-text-property 1 'org-imenu-marker symbol))))
+;; (defun ido-imenu ()
+;;   "Update the imenu index and then use ido to select a symbol to navigate to.
+;; Symbols matching the text at point are put first in the completion list."
+;;   (interactive)
+;;   (imenu--make-index-alist)
+;;   (let ((name-and-pos '())
+;;         (symbol-names '()))
+;;     (flet ((addsymbols
+;;             (symbol-list)
+;;             (when (listp symbol-list)
+;;               (dolist (symbol symbol-list)
+;;                 (let ((name nil) (position nil))
+;;                   (cond
+;;                    ((and (listp symbol) (imenu--subalist-p symbol))
+;;                     (addsymbols symbol))
 
-                  (unless (or (null position) (null name))
-                    (add-to-list 'symbol-names name)
-                    (add-to-list 'name-and-pos (cons name position))))))))
-      (addsymbols imenu--index-alist))
-    ;; If there are matching symbols at point, put them at the beginning
-    ;; of `symbol-names'.
-    (let ((symbol-at-point (thing-at-point 'symbol)))
-      (when symbol-at-point
-        (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
-               (matching-symbols
-                (delq nil (mapcar
-                           (lambda (symbol)
-                             (if (string-match regexp symbol) symbol))
-                           symbol-names))))
-          (when matching-symbols
-            (sort matching-symbols (lambda (a b) (> (length a) (length b))))
-            (mapc
-             (lambda (symbol)
-               (setq symbol-names (cons symbol (delete symbol symbol-names))))
-             matching-symbols)))))
-    (let* ((selected-symbol (ido-completing-read "Search: " symbol-names))
-           (position (cdr (assoc selected-symbol name-and-pos))))
-      (push-mark)
-      (if (overlayp position)
-          (goto-char (overlay-start position))
-        (goto-char position)))))
+;;                    ((listp symbol)
+;;                     (setq name (car symbol))
+;;                     (setq position (cdr symbol)))
+
+;;                    ((stringp symbol)
+;;                     (setq name symbol)
+;;                     (setq position
+;;                           (get-text-property 1 'org-imenu-marker symbol))))
+
+;;                   (unless (or (null position) (null name))
+;;                     (add-to-list 'symbol-names name)
+;;                     (add-to-list 'name-and-pos (cons name position))))))))
+;;       (addsymbols imenu--index-alist))
+;;     ;; If there are matching symbols at point, put them at the beginning
+;;     ;; of `symbol-names'.
+;;     (let ((symbol-at-point (thing-at-point 'symbol)))
+;;       (when symbol-at-point
+;;         (let* ((regexp (concat (regexp-quote symbol-at-point) "$"))
+;;                (matching-symbols
+;;                 (delq nil (mapcar
+;;                            (lambda (symbol)
+;;                              (if (string-match regexp symbol) symbol))
+;;                            symbol-names))))
+;;           (when matching-symbols
+;;             (sort matching-symbols (lambda (a b) (> (length a) (length b))))
+;;             (mapc
+;;              (lambda (symbol)
+;;                (setq symbol-names (cons symbol (delete symbol symbol-names))))
+;;              matching-symbols)))))
+;;     (let* ((selected-symbol (ido-completing-read "Search: " symbol-names))
+;;            (position (cdr (assoc selected-symbol name-and-pos))))
+;;       (push-mark)
+;;       (if (overlayp position)
+;;           (goto-char (overlay-start position))
+;;         (goto-char position)))))
 
 (defun comment-or-uncomment-region-or-line ()
     "Comments or uncomments the region or the current line if there's no active region."
@@ -314,4 +327,28 @@ Symbols matching the text at point are put first in the completion list."
             (setq beg (line-beginning-position) end (line-end-position)))
         (comment-or-uncomment-region beg end)
         (next-line)))
+
+(defun terminal ()
+  "Switch to terminal. Launch if nonexistent."
+  (interactive)
+  (if (get-buffer "*ansi-term*")
+      (switch-to-buffer "*ansi-term*")
+    (ansi-term "/bin/zsh"))
+  (get-buffer-process "*ansi-term*"))
+
+(defalias 'tt 'terminal)
+
+(defun dired-open-term ()
+  "Open an `ansi-term' that corresponds to current directory."
+  (interactive)
+  (let ((current-dir (dired-current-directory)))
+    (term-send-string
+     (terminal)
+     (if (file-remote-p current-dir)
+         (let ((v (tramp-dissect-file-name current-dir t)))
+           (format "ssh %s@%s\n"
+                   (aref v 1) (aref v 2)))
+       (format "cd '%s'\n" current-dir)))))
+
+
 (provide 'utility-funcs)

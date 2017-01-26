@@ -18,6 +18,7 @@
 
 (require-package 'visual-regexp-steroids)
 (require-package 'ido-vertical-mode)
+(require-package 'imenu-anywhere)
 
 (require-package 'jedi)
 ;;(require-package 'auto-complete)

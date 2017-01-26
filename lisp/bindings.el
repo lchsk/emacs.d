@@ -54,7 +54,7 @@
 ;;-----------------------------------------;;
 
 (global-set-key (kbd "M-x") 'helm-M-x)
-(bind-key* "M-q" (lambda () (interactive) (ido-imenu)))
+(bind-key* "M-q" (lambda () (interactive) (ido-imenu-anywhere)))
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (bind-key "M-m" 'helm-mini)
@@ -117,6 +117,8 @@
 ;; (bind-key* "C-c S" 'smerge-mode)
 (bind-key* "C-c T" 'toggle-window-split)
 ;; (bind-key* "C-c N" 'smerge-next)
+(bind-key* "C-`" 'dired-open-term)
+
 (bind-key* "C-c w" 'save-buffer-tabs)
 
 (bind-key* "C-<tab>" 'bury-buffer)
