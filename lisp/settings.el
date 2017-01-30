@@ -106,13 +106,6 @@
 (setq helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
-;; To keep helm window at the bottom: broken
-;;(add-to-list 'display-buffer-alist
-;;             `(,(rx bos "*helm" (* not-newline) "*" eos)
-;;               (display-buffer-in-side-window)
-;;               (inhibit-same-window . t)
-;;               (window-height . 0.4)))
-
 (defalias 'yes-or-no-p 'y-or-n-p)
 (set-face-attribute 'default nil :height 109)
 

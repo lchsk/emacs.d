@@ -21,19 +21,6 @@
 (global-set-key (kbd "C-c N") 'next-buffer)
 (global-set-key (kbd "C-c P") 'previous-buffer)
 
-;; (bind-key* "M-n" (
-                  ;; lambda ()
-                         ;; (interactive)
-                         ;; (scroll-up-line 5)
-                         ;; (move-to-window-line-middle)
-                         ;; ))
-;; (bind-key* "M-p" (
-                  ;; lambda ()
-                         ;; (interactive)
-                         ;; (scroll-down-line 5)
-                         ;; (move-to-window-line-middle)
-                         ;; ))
-
 (bind-key* "C-v" (
                   lambda ()
                          (interactive)
@@ -91,7 +78,7 @@
 (bind-key* "C-c g" 'helm-google-suggest)
 (bind-key* "C-c h" 'highlight-symbol)
 (bind-key* "C-c i" 'change-inner)
-(bind-key* "C-j" 'join-line)
+(bind-key* "C-J" 'join-line)
 (bind-key* "C-c t" 'tabs-mode)
 (bind-key* "C-c k" 'kill-word-at-point)
 (bind-key* "C-c s" 'fixup-whitespace)
