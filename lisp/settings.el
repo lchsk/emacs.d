@@ -21,6 +21,8 @@
 
 (setq calendar-week-start-day 1)
 
+(flimenu-global-mode)
+
 ;; case-insensitive search
 (setq case-fold-search t)
 

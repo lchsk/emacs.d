@@ -13,6 +13,11 @@
 (require-package 'org-bullets)
 (require 'org-bullets)
 
+(require-package 'idomenu)
+
+(require-package 'flimenu)
+(require 'flimenu)
+
 (require-package 'multiple-cursors)
 (require 'multiple-cursors)
 

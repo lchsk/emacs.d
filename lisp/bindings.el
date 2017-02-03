@@ -41,7 +41,8 @@
 ;;-----------------------------------------;;
 
 (global-set-key (kbd "M-x") 'helm-M-x)
-(bind-key* "M-q" (lambda () (interactive) (ido-imenu-anywhere)))
+;; (bind-key* "M-q" (lambda () (interactive) (ido-imenu-anywhere)))
+(bind-key* "M-q" (lambda () (interactive) (idomenu)))
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
 (bind-key "M-m" 'helm-mini)
