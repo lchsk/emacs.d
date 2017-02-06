@@ -252,4 +252,4 @@
 ;;           :weight
 ;;           light))))
 
-;; (provide 'mode-line)
+(provide 'mode-line)
