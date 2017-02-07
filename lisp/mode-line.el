@@ -1,24 +1,23 @@
+(defvar mode-line-col-1 "#eab700")
+;; (setq mode-line-col-1 "#eab700")
+
 (setq-default
  mode-line-format
 
 
- '(; Position, including warning for 80 columns
-   (:propertize (
+ '
+ (; Position, including warning for 80 columns
+   ; emacsclient [default -- keep?]
+   ;; mode-line-client
+  ""
+        (:propertize (
                  (:eval(
                         format
                         " %s "
                         (window-numbering-get-number-string)
                         )))
-                'face ((':background (mode-line-col-1)) ':foreground "white"))
+                face mode-line-filename-face)
 
-    (:propertize "%l:" face mode-line-position-face)
-    (:eval (propertize "%c" 'face
-                      (if (>= (current-column) 80)
-                          'mode-line-80col-face
-                        'mode-line-position-face)))
-   ; emacsclient [default -- keep?]
-   ;; mode-line-client
-   ""
    ; read-only or modified status
    (:eval
     (cond (buffer-read-only
@@ -26,12 +25,24 @@
           ((buffer-modified-p)
            (propertize " * " 'face 'mode-line-modified-face))
           (t "")))
-   " "
+   ""
    ; directory and buffer/file name
    (:propertize (:eval (shorten-directory default-directory 30))
                 face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
+
+   ; narrow [default -- keep?]
+   "%n"
+   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
+   ;; (vc-mode vc-mode)
+
+
+    (:propertize " %l:" face mode-line-position-face)
+    (:eval (propertize "%c" 'face
+                      (if (>= (current-column) 80)
+                          'mode-line-80col-face
+                        'mode-line-position-face)))
 
       (:propertize (
                  (:eval
@@ -40,10 +51,7 @@
                    (if indent-tabs-mode " T " " S "))))
                    face mode-line-filename-face
                 )
-   ; narrow [default -- keep?]
-   "%n"
-   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
-   ;; (vc-mode vc-mode)
+
 
       (:propertize (
                  (:eval (
@@ -54,13 +62,13 @@
                                  vc-mode
                                  )
                                 "")))
-                   face mode-line-filename-face
+                   face mode-line-face
 				   )
 
 
    " %["
    (:propertize mode-name
-                face mode-line-mode-face)
+                face mode-line-face)
    "%] "
    ;; (:eval (propertize (format-mode-line minor-mode-alist)
                       ;; 'face 'mode-line-minor-mode-face))
@@ -120,11 +128,10 @@
     :foreground "gray60")
 (set-face-attribute 'mode-line-filename-face nil
     :inherit 'mode-line-face
-    :foreground "#eab700"
+    :foreground mode-line-col-1
     :weight 'bold)
 (set-face-attribute 'mode-line-position-face nil
-    :inherit 'mode-line-face
-    :family "Menlo" :height 100)
+    :inherit 'mode-line-face)
 (set-face-attribute 'mode-line-mode-face nil
     :inherit 'mode-line-face
     :foreground "gray80")
