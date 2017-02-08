@@ -49,7 +49,7 @@
                   (format
                    "%s"
                    (if indent-tabs-mode " T " " S "))))
-                   face mode-line-filename-face
+                   face mode-line-face
                 )
 
 
@@ -91,10 +91,9 @@
       (setq output (concat (car path) "/" output))
       (setq path (cdr path)))
     (when path
-      (setq output (concat ".../" output)))
+      (setq output (concat "../" output)))
     output))
 
-;; Extra mode line faces
 (make-face 'mode-line-read-only-face)
 (make-face 'mode-line-modified-face)
 (make-face 'mode-line-folder-face)
@@ -106,14 +105,13 @@
 (make-face 'mode-line-80col-face)
 
 (set-face-attribute 'mode-line nil
-    :foreground "gray60" :background "gray20"
+    :foreground "white" :background "gray10"
     :inverse-video nil
-    :box '(:line-width 6 :color "gray20" :style nil))
+    :box '(:line-width 2 :color "gray10" :style nil))
 (set-face-attribute 'mode-line-inactive nil
-    :foreground "gray80" :background "gray40"
+    :foreground "gray80" :background "gray10"
     :inverse-video nil
-    :box '(:line-width 6 :color "gray40" :style nil))
-
+    :box '(:line-width 2 :color "gray10" :style nil))
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
     :foreground "#4271ae"
