@@ -1,5 +1,79 @@
 (defvar mode-line-col-1 "#eab700")
-;; (setq mode-line-col-1 "#eab700")
+(defvar mode-line-col-2 "gray80")
+
+;; (setq-default header-line-format
+			  ;; '(:propertize (:eval (concat default-directory (buffer-name))))
+			                  ;; face (
+                      ;; :background
+                      ;; "#6a4a3c"
+                      ;; :foreground
+                      ;; "white"))
+
+(defmacro with-face (str &rest properties)
+    `(propertize ,str 'face (list ,@properties)))
+
+  (defun sl/make-header ()
+    ""
+    (let* ((sl/full-header (abbreviate-file-name buffer-file-name))
+           (sl/header (file-name-directory sl/full-header))
+           (sl/drop-str "(...)"))
+      (if (> (length sl/full-header)
+             (window-body-width))
+          (if (> (length sl/header)
+                 (window-body-width))
+              (progn
+                (concat (with-face sl/drop-str
+                                   :background "blue"
+                                   :weight 'normal
+                                   :height 90
+                                   )
+                        (with-face (substring sl/header
+                                              (+ (- (length sl/header)
+                                                    (window-body-width))
+                                                 (length sl/drop-str))
+                                              (length sl/header))
+                                   ;; :background "red"
+                                   :weight 'normal
+                                   )))
+            (concat (with-face sl/header
+                               ;; :background "red"
+                               :foreground mode-line-col-2
+                               :weight 'normal
+							   :height 90
+                               )
+                    (with-face (file-name-nondirectory buffer-file-name)
+                           :weight 'normal
+                           :height 90
+                           :foreground mode-line-col-1
+                           ;; :background "red"
+                           )
+
+                    ))
+        (concat (with-face sl/header
+                           ;; :background "green"
+                           ;; :foreground "black"
+                           :weight 'normal
+                           :foreground mode-line-col-2
+						   :height 90
+                           )
+                (with-face (file-name-nondirectory buffer-file-name)
+                           :weight 'normal
+                           :height 90
+                           :foreground mode-line-col-1
+                           ;; :background "red"
+                           )))))
+
+  (defun sl/display-header ()
+    (setq header-line-format
+          '("" ;; invocation-name
+            (:eval (if (buffer-file-name)
+                       (sl/make-header)
+                     "%b")))))
+
+
+
+  (add-hook 'buffer-list-update-hook
+            'sl/display-header)
 
 (setq-default
  mode-line-format
@@ -16,7 +90,7 @@
                         " %s "
                         (window-numbering-get-number-string)
                         )))
-                face mode-line-filename-face)
+                face mode-line-face)
 
    ; read-only or modified status
    (:eval
@@ -27,8 +101,8 @@
           (t "")))
    ""
    ; directory and buffer/file name
-   (:propertize (:eval (shorten-directory default-directory 30))
-                face mode-line-folder-face)
+   ;; (:propertize (:eval (shorten-directory default-directory 30))
+                ;; face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
 
