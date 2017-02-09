@@ -1,14 +1,6 @@
 (defvar mode-line-col-1 "#eab700")
 (defvar mode-line-col-2 "gray80")
 
-;; (setq-default header-line-format
-			  ;; '(:propertize (:eval (concat default-directory (buffer-name))))
-			                  ;; face (
-                      ;; :background
-                      ;; "#6a4a3c"
-                      ;; :foreground
-                      ;; "white"))
-
 (defmacro with-face (str &rest properties)
     `(propertize ,str 'face (list ,@properties)))
 

@@ -19,6 +19,8 @@
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (setq ido-vertical-show-count t)
 
+(remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
+
 (setq calendar-week-start-day 1)
 
 (flimenu-global-mode)

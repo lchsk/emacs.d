@@ -65,13 +65,20 @@
 (global-set-key [f9] 'make-frame)
 (global-set-key [f10] 'delete-frame)
 
+;; (dolist (key '("\C-x\k"
+               ;; ))
+  ;; (global-unset-key key))
+
+(global-unset-key (kbd "C-x k"))
+
+(bind-key* "C-x k" (lambda () (interactive) (kill-buffer)))
+
 ;; (bind-key* "C-," 'goto-last-change)
 ;; (bind-key* "C-." 'goto-last-change-reverse)
 (bind-key* "C-," 'mark-word)
 (bind-key* "C-." 'mark-current-line)
 (bind-key* "C-<" 'mark-end-of-sentence)
 (bind-key* "C->" 'mark-sexp)
-
 
 (bind-key* "C-c a" 'ac-complete-with-helm)
 (bind-key* "C-c b" 'magit-blame)
@@ -115,7 +122,7 @@
 (bind-key* "C-S-<tab>" 'unbury-buffer)
 
 (bind-key* "M-n e" 'mc/edit-lines)
-(bind-key* "M-n n" 'mc/mark-next-like-this)
+(bind-key* "C-S-t" 'mc/mark-next-like-this)
 (bind-key* "M-n p" 'mc/mark-previous-like-this)
 (bind-key* "M-n a" 'mc/mark-all-like-this)
 
