@@ -16,14 +16,14 @@
     ""
     (let* ((sl/full-header (abbreviate-file-name buffer-file-name))
            (sl/header (file-name-directory sl/full-header))
-           (sl/drop-str "(...)"))
+           (sl/drop-str "... "))
       (if (> (length sl/full-header)
              (window-body-width))
           (if (> (length sl/header)
                  (window-body-width))
               (progn
                 (concat (with-face sl/drop-str
-                                   :background "blue"
+                                   :foreground mode-line-col-1
                                    :weight 'normal
                                    :height 90
                                    )
@@ -32,11 +32,11 @@
                                                     (window-body-width))
                                                  (length sl/drop-str))
                                               (length sl/header))
-                                   ;; :background "red"
                                    :weight 'normal
+                                   :foreground mode-line-col-2
+                                   :height 90
                                    )))
             (concat (with-face sl/header
-                               ;; :background "red"
                                :foreground mode-line-col-2
                                :weight 'normal
 							   :height 90
@@ -45,13 +45,10 @@
                            :weight 'normal
                            :height 90
                            :foreground mode-line-col-1
-                           ;; :background "red"
                            )
 
                     ))
         (concat (with-face sl/header
-                           ;; :background "green"
-                           ;; :foreground "black"
                            :weight 'normal
                            :foreground mode-line-col-2
 						   :height 90
@@ -60,7 +57,6 @@
                            :weight 'normal
                            :height 90
                            :foreground mode-line-col-1
-                           ;; :background "red"
                            )))))
 
   (defun sl/display-header ()
