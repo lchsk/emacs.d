@@ -83,9 +83,9 @@
    ; read-only or modified status
    (:eval
     (cond (buffer-read-only
-           (propertize " RO " 'face 'mode-line-read-only-face))
+           (propertize "¯\\_(ツ)_/¯ " 'face 'mode-line-read-only-face))
           ((buffer-modified-p)
-           (propertize " * " 'face 'mode-line-modified-face))
+           (propertize "!!! " 'face 'mode-line-modified-face))
           (t "")))
    ""
    ; directory and buffer/file name
@@ -176,13 +176,10 @@
     :box '(:line-width 2 :color "gray10" :style nil))
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
-    :foreground "#4271ae"
-    :box '(:line-width 2 :color "#4271ae"))
+    :foreground mode-line-col-1)
 (set-face-attribute 'mode-line-modified-face nil
     :inherit 'mode-line-face
-    :foreground "#c82829"
-    :background "#ffffff"
-    :box '(:line-width 2 :color "#c82829"))
+    :foreground mode-line-col-1)
 (set-face-attribute 'mode-line-folder-face nil
     :inherit 'mode-line-face
     :foreground "gray60")
