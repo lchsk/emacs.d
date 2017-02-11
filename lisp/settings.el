@@ -181,4 +181,12 @@
                     :background "transparent"
                     :box nil)
 
+(setq less-imenu-generic-expression
+      '(
+        (nil "\\(\\(void\\|unsigned\\)\s\\(.*\\)(.*)\\)" 1)))
+
+(add-hook 'c++-mode-hook
+          (lambda ()
+            (setq imenu-generic-expression less-imenu-generic-expression)))
+
 (provide 'settings)
