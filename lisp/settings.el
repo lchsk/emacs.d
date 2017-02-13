@@ -158,7 +158,7 @@
 
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
-(setq org-bullets-bullet-list '("⚫" "⚪" "❍" "○" "☉" "◎" "◉" "○" "◌" "◎" "●" "◦" "◯"  "⚬" "⊙" "⊚" "⊛" "∙" "∘"))
+(setq org-bullets-bullet-list '("⚫" "⚪" "⚬" "❍" "○" "☉" "◎" "◉" "○" "◌" "◎" "●" "◦" "◯" "⚬" "⊙" "⊚" "⊛" "∙" "∘"))
 
 (setq org-ellipsis " ➜")
 
