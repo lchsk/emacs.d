@@ -350,5 +350,9 @@ instead, but there should be little or no difference."
                    (aref v 1) (aref v 2)))
        (format "cd '%s'\n" current-dir)))))
 
+(defun join-lines ()
+    (interactive)
+    (setq fill-column 100000)
+    (fill-paragraph nil))
 
 (provide 'utility-funcs)
