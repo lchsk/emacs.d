@@ -49,8 +49,8 @@
 
 (require-package 'js2-mode)
 
-;; (require-package 'realgud)
-;; (require 'realgud)
+(require-package 'realgud)
+(require 'realgud)
 
 (require-package 'multi-term)
 (require 'multi-term)
