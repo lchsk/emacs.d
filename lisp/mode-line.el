@@ -172,7 +172,9 @@
                                  replace-regexp-in-string
                                  "^ Git[:-]"
                                  ""
-								 (substring-no-properties vc-mode)
+								 (if (stringp vc-mode)
+									 (substring-no-properties vc-mode)
+								   "")
                                  )
                                 "")))
                    face mode-line
