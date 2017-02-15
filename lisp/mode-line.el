@@ -137,7 +137,7 @@
     (cond (buffer-read-only
            (propertize "¯\\_(ツ)_/¯ " 'face 'mode-line-read-only-face))
           ((buffer-modified-p)
-           (propertize "!!! " 'face 'mode-line-modified-face))
+           (propertize "⚑⚑⚑ " 'face 'mode-line-modified-face))
           (t "")))
    ""
    ; directory and buffer/file name
