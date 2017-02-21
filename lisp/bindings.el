@@ -70,6 +70,9 @@
   ;; (global-unset-key key))
 
 (global-unset-key (kbd "C-x k"))
+;; (global-unset-key (kbd "ESC"))
+(define-key key-translation-map (kbd "ESC") (kbd "C-g"))
+(define-key key-translation-map (kbd "C-<escape>") (kbd "ESC"))
 
 (bind-key* "C-x k" (lambda () (interactive) (kill-buffer)))
 
