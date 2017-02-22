@@ -25,6 +25,11 @@
 
 (flimenu-global-mode)
 
+(setq uniquify-separator " • ")
+(setq uniquify-ignore-buffers-re "^\\*")
+(setq uniquify-buffer-name-style 'reverse)
+(setq uniquify-after-kill-buffer-p t)
+
 ;; case-insensitive search
 (setq case-fold-search t)
 

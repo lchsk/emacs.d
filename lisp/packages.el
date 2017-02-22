@@ -15,6 +15,8 @@
 
 (require-package 'idomenu)
 
+(require 'uniquify)
+
 (require-package 'flimenu)
 (require 'flimenu)
 
