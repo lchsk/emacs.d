@@ -145,6 +145,8 @@
  (lambda()
    (define-key dired-mode-map "j" 'ido-find-file)))
 
+(setq dired-listing-switches "-alht")
+
 ;; Org-mode
 
 (set-language-environment 'utf-8)
