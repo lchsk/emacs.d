@@ -14,8 +14,8 @@
 (global-set-key (kbd "M-o") 'other-window)
 
 (global-set-key (kbd "C-x w") 'whitespace-mode)
-(global-set-key (kbd "M-[") 'forward-paragraph)
-(global-set-key (kbd "M-]") 'backward-paragraph)
+(global-set-key (kbd "M-n") 'forward-paragraph)  ;; M-[
+(global-set-key (kbd "M-p") 'backward-paragraph) ;; M-]
 (global-set-key (kbd "M-{") 'forward-sexp)
 (global-set-key (kbd "M-}") 'backward-sexp)
 (global-set-key (kbd "C-c N") 'next-buffer)
@@ -50,7 +50,7 @@
 ;; (bind-key "M-z" 'helm-projectile)
 (bind-key "M-z" 'helm-mark-ring)
 ;; (bind-key "M-p" 'helm-recentf)
-(bind-key "M-p" 'ido-recentf-open)
+(bind-key "M-s" 'ido-recentf-open)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (bind-key "C-x d" 'ido-dired)
@@ -124,10 +124,10 @@
 (bind-key* "C-<tab>" 'bury-buffer)
 (bind-key* "C-S-<tab>" 'unbury-buffer)
 
-(bind-key* "M-n e" 'mc/edit-lines)
+(bind-key* "C-S-l" 'mc/edit-lines)
 (bind-key* "C-S-t" 'mc/mark-next-like-this)
-(bind-key* "M-n p" 'mc/mark-previous-like-this)
-(bind-key* "M-n a" 'mc/mark-all-like-this)
+(bind-key* "C-S-o" 'mc/mark-previous-like-this)
+(bind-key* "C-S-x" 'mc/mark-all-like-this)
 
 (global-set-key (kbd "<C-up>") 'shrink-window)
 (global-set-key (kbd "<C-down>") 'enlarge-window)
