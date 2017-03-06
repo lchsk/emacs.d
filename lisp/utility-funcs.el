@@ -355,4 +355,8 @@ instead, but there should be little or no difference."
     (setq fill-column 100000)
     (fill-paragraph nil))
 
+(defun insert-uuid ()
+  (interactive)
+  (insert (shell-command-to-string "uuidgen")))
+
 (provide 'utility-funcs)
