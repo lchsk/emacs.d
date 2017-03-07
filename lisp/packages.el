@@ -17,6 +17,8 @@
 
 (require 'uniquify)
 
+(require-package 'restclient)
+
 (require-package 'flimenu)
 (require 'flimenu)
 
@@ -46,8 +48,8 @@
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
-(require-package 'popwin)
-(require 'popwin)
+;; (require-package 'popwin)
+;; (require 'popwin)
 
 (require-package 'js2-mode)
 
