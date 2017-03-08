@@ -50,7 +50,7 @@
 ;; (bind-key "M-z" 'helm-projectile)
 (bind-key "M-z" 'helm-mark-ring)
 ;; (bind-key "M-p" 'helm-recentf)
-(bind-key "M-s" 'ido-recentf-open)
+(bind-key* "M-s" 'ido-recentf-open)
 ;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (bind-key "C-x d" 'ido-dired)
