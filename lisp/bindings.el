@@ -125,8 +125,8 @@
 (bind-key* "C-S-<tab>" 'unbury-buffer)
 
 (bind-key* "C-S-l" 'mc/edit-lines)
-(bind-key* "C-S-t" 'mc/mark-next-like-this)
-(bind-key* "C-S-o" 'mc/mark-previous-like-this)
+(bind-key* "C-S-o" 'mc/mark-next-like-this)
+(bind-key* "C-S-t" 'mc/mark-previous-like-this)
 (bind-key* "C-S-x" 'mc/mark-all-like-this)
 
 (global-set-key (kbd "<C-up>") 'shrink-window)
