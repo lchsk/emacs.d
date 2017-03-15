@@ -110,7 +110,6 @@
 (bind-key* "C-c H" 'highlight-symbol-remove-all)
 (bind-key* "C-c J" '(lambda () (interactive) (join-line 1)))
 
-(bind-key* "C-c L" 'magit-log-head)
 (bind-key* "C-c O" 'change-outer)
 ;; (bind-key* "C-c P" 'switch-to-previous-buffer)
 (bind-key* "C-c R" 'align-regexp)
@@ -135,7 +134,8 @@
 (global-set-key (kbd "<C-M-return>") 'enlarge-window-horizontally)
 
 ;; Magit
-(bind-key* "C-x g" 'magit-status)
+(bind-key* "C-S-m" 'magit-status)
+(bind-key* "C-S-l" 'magit-log-head)
 
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
