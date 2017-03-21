@@ -357,6 +357,9 @@ instead, but there should be little or no difference."
 
 (defun insert-uuid ()
   (interactive)
-  (insert (shell-command-to-string "uuidgen")))
+  (insert
+   (replace-regexp-in-string
+    "\n\\'" ""
+    (shell-command-to-string "uuidgen"))))
 
 (provide 'utility-funcs)
