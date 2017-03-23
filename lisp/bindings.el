@@ -57,6 +57,8 @@
 ;;(bind-key* "C-c i" 'helm-swoop)
 (bind-key* "" 'helm-multi-swoop-all)
 
+(bind-key* "C-x C-j" 'dired-jump)
+
 (global-set-key [f1] 'multi-term)
 (global-set-key [f2] 'rgrep)
 (global-set-key [f3] 'dired-find-file)
