@@ -157,7 +157,7 @@
 ;;(global-set-key (kbd "TAB") 'self-insert-command)
 
 ;; spotify
-(global-set-key (kbd "<pause>") #'spotify-playpause)
-(global-set-key (kbd "M-<pause>") #'spotify-next)
+;;(global-set-key (kbd "<pause>") #'spotify-playpause)
+;;(global-set-key (kbd "M-<pause>") #'spotify-next)
 
 (provide 'bindings)
