@@ -362,4 +362,11 @@ instead, but there should be little or no difference."
     "\n\\'" ""
     (shell-command-to-string "uuidgen"))))
 
+(defun insert-date ()
+  (interactive)
+  (insert
+   (replace-regexp-in-string
+    "\n\\'" ""
+    (shell-command-to-string "date"))))
+
 (provide 'utility-funcs)
