@@ -367,6 +367,6 @@ instead, but there should be little or no difference."
   (insert
    (replace-regexp-in-string
     "\n\\'" ""
-    (shell-command-to-string "date"))))
+    (shell-command-to-string "date +%d-%m-%Y\\ %H:%M"))))
 
 (provide 'utility-funcs)
