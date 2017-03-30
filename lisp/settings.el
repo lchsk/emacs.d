@@ -145,7 +145,7 @@
  (lambda()
    (define-key dired-mode-map "j" 'ido-find-file)))
 
-(setq dired-listing-switches "-alht")
+(setq dired-listing-switches "-alh")
 
 ;; Org-mode
 
