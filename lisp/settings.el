@@ -116,7 +116,6 @@
       helm-recentf-fuzzy-match    t)
 
 (defalias 'yes-or-no-p 'y-or-n-p)
-(set-face-attribute 'default nil :height 109)
 
 (setq frame-title-format
       '("" invocation-name ": "(:eval (if (buffer-file-name)
@@ -195,5 +194,11 @@
 (add-hook 'c++-mode-hook
           (lambda ()
             (setq imenu-generic-expression less-imenu-generic-expression)))
+
+(set-face-attribute 'default nil
+                    :family "Iosevka"
+                    :height 109
+                    :weight 'normal
+                    :width 'normal)
 
 (provide 'settings)
