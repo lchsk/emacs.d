@@ -14,13 +14,9 @@
 
 
 (set-face-attribute 'mode-line nil
-    :foreground "white" :background "gray10"
-    :inverse-video nil
-    :box '(:line-width 2 :color "gray10" :style nil))
-;; (set-face-attribute 'mode-line-inactive nil
-    ;; :foreground "gray80" :background "gray10"
-    ;; :inverse-video nil
-    ;; :box '(:line-width 2 :color "gray10" :style nil))
+    :foreground "white" :background "gray10")
+(set-face-attribute 'mode-line-inactive nil
+    :foreground "gray80" :background "gray10")
 (set-face-attribute 'mode-line-read-only-face nil
     :inherit 'mode-line-face
     :foreground mode-line-col-1)
@@ -127,8 +123,7 @@
                  (:eval(
                         format
                         "%s "
-                        (window-numbering-get-number-string)
-                        )))
+                        (window-numbering-get-number-string))))
 					 face mode-line
 					 )
 
@@ -137,7 +132,7 @@
     (cond (buffer-read-only
            (propertize "¯\\_(ツ)_/¯ " 'face 'mode-line-read-only-face))
           ((buffer-modified-p)
-           (propertize "⚑⚑⚑ " 'face 'mode-line-modified-face))
+           (propertize "** " 'face 'mode-line-modified-face))
           (t "")))
    ""
    ; directory and buffer/file name
