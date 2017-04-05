@@ -324,4 +324,8 @@ instead, but there should be little or no difference."
     "\n\\'" ""
     (shell-command-to-string "date +%d-%m-%Y\\ %H:%M"))))
 
+(defun clear-recentf-list ()
+  (interactive)
+  (setq recentf-list '()))
+
 (provide 'utility-funcs)
