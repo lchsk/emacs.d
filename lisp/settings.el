@@ -10,6 +10,9 @@
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
+(yas-global-mode 1)
+(setq helm-yas-space-match-any-greedy t)
+
 (ido-mode 1)
 (ido-everywhere 1)
 (ido-vertical-mode 1)
