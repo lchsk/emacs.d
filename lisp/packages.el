@@ -9,6 +9,7 @@
 (require-package 'undo-tree)
 
 (require-package 'flycheck)
+(require-package 'flycheck-pos-tip)
 
 (require-package 'yasnippet)
 (require 'yasnippet)

@@ -118,6 +118,9 @@
                   flycheck-pylintrc "~/.emacs.d/pylintrc")
             ))
 
+(with-eval-after-load 'flycheck
+  (flycheck-pos-tip-mode))
+
 (setq flycheck-display-errors-delay 0)
 
 (blink-cursor-mode 0)
