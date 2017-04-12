@@ -11,6 +11,7 @@
 
 (require 'init-elpa)
 
+(require 'fonts)
 (require 'packages)
 
 (require 'settings)
