@@ -68,8 +68,15 @@
 
 (setq backup-directory-alist `(("." . "~/.saves")))
 
-(ac-config-default)
-(setq ac-auto-start nil)
+(require 'color)
+
+(let ((bg (face-attribute 'default :background)))
+  (custom-set-faces
+   `(company-tooltip ((t (:inherit default :background "gray"))))
+   `(company-scrollbar-bg ((t (:background ,(color-lighten-name bg 10)))))
+   `(company-scrollbar-fg ((t (:background ,(color-lighten-name bg 5)))))
+   `(company-tooltip-selection ((t (:inherit default :foreground "red"))))
+   `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
 
 (autopair-global-mode)
 
@@ -105,6 +112,8 @@
 
 (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
+(global-company-mode 1)
+
 (add-hook 'python-mode-hook
           (lambda ()
             (setq-default tab-width 4)
@@ -112,6 +121,7 @@
             (rainbow-delimiters-mode 1)
             (setq python-indent-offset 4)
             (jedi:setup)
+            (add-to-list 'company-backends 'company-jedi)
             (flycheck-mode 1)
             (setq flycheck-checker 'python-pylint
                   flycheck-checker-error-threshold 300

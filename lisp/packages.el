@@ -35,7 +35,7 @@
 (require-package 'ido-vertical-mode)
 (require-package 'imenu-anywhere)
 
-(require-package 'jedi)
+(require-package 'company-jedi)
 ;;(require-package 'auto-complete)
 
 (require-package 'flx)

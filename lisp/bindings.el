@@ -85,7 +85,8 @@
 (bind-key* "C-<" 'mark-end-of-sentence)
 (bind-key* "C->" 'mark-sexp)
 
-(bind-key* "C-c a" 'ac-complete-with-helm)
+;; (bind-key* "C-c a" 'ac-complete-with-helm)
+;; (bind-key* "C-c a" 'auto-complete)
 (bind-key* "C-c b" 'magit-blame)
 (bind-key* "C-c c" 'helm-occur)
 (bind-key* "C-c d" 'duplicate-line)
