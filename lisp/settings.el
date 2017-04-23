@@ -227,9 +227,9 @@
                     :weight 'normal
                     :width 'normal)
 
-(set-frame-font "Iosevka 11" nil t)
+(set-frame-font "Iosevka 10" nil t)
 
 (add-to-list 'default-frame-alist
-             '(font . "Iosevka 11"))
+             '(font . "Iosevka 10"))
 
 (provide 'settings)
