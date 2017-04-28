@@ -283,6 +283,13 @@ instead, but there should be little or no difference."
         (comment-or-uncomment-region beg end)
         (next-line)))
 
+(defun term-toggle-mode ()
+  "Toggles term between line mode and char mode"
+  (interactive)
+  (if (term-in-line-mode)
+      (term-char-mode)
+    (term-line-mode)))
+
 (defun terminal ()
   "Switch to terminal. Launch if nonexistent."
   (interactive)
