@@ -19,6 +19,8 @@
 (require-package 'org-bullets)
 (require 'org-bullets)
 
+(require-package 'olivetti)
+
 (require-package 'idomenu)
 
 (require 'uniquify)
