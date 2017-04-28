@@ -1,5 +1,7 @@
 
+;; (insert buffer-file-coding-system)
 
+;; (insert buffer-file-name)
 
 (defmacro with-face (str &rest properties)
     `(propertize ,str 'face (list ,@properties)))
@@ -96,6 +98,8 @@
 
    ; narrow [default -- keep?]
    "%n"
+   " %p"
+   ;; (format "%s" buffer-file-coding-system)
    ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
    ;; (vc-mode vc-mode)
 
