@@ -55,8 +55,6 @@
 (projectile-global-mode)
 (recentf-mode)
 
-;;(popwin-mode 1)
-
 (helm-flx-mode +1)
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
@@ -91,8 +89,6 @@
             (linum-mode)))
 
 (defvaralias 'js-indent-level 'tab-width)
-(defvaralias 'c-basic-offset 'tab-width)
-(setq c-default-style "k&r")
 
 (add-to-list 'auto-mode-alist '("\\.pkb\\'" . sql-mode))
 (add-to-list 'auto-mode-alist '("\\.pks\\'" . sql-mode))
@@ -100,17 +96,6 @@
 (add-hook 'sql-mode-hook
           (lambda ()
             (setq tab-width 4)))
-
-(defun my-c-mode-common-hook ()
-;;  (c-set-offset 'substatement-open 0)
-;;  (setq c++-tab-always-indent nil)
-  (setq c-basic-offset 4)
-  (setq c-indent-level 4)
-  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
-  (setq tab-width 4)
-  )
-
-(add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
 (global-company-mode 1)
 
@@ -217,9 +202,63 @@
       '(
         (nil "\\(\\(void\\|unsigned\\)\s\\(.*\\)(.*)\\)" 1)))
 
-(add-hook 'c++-mode-hook
-          (lambda ()
-            (setq imenu-generic-expression less-imenu-generic-expression)))
+
+(defun my-c++-mode-hook ()
+;;  (c-set-offset 'substatement-open 0)
+;;  (setq c++-tab-always-indent nil)
+  (setq c-basic-offset 4)
+  (setq c-indent-level 4)
+  (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+  (setq tab-width 4)
+  (irony-mode)
+  (add-to-list 'company-backends 'company-irony company-gtags)
+  (setq imenu-generic-expression less-imenu-generic-expression)
+  (flycheck-mode 1)
+  (ggtags-mode 1)
+  (helm-gtags-mode)
+  )
+
+(custom-set-variables
+ '(helm-gtags-path-style 'relative)
+ '(helm-gtags-ignore-case t)
+ '(helm-gtags-auto-update t))
+
+;; (with-eval-after-load 'helm-gtags
+  ;; (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
+  ;; (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
+  ;; (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
+  ;; (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
+  ;; (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
+  ;; (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
+  ;; (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
+
+ (defun my-irony-mode-hook ()
+    (define-key irony-mode-map [remap completion-at-point]
+      'irony-completion-at-point-async)
+    (define-key irony-mode-map [remap complete-symbol]
+      'irony-completion-at-point-async))
+
+;; (defvaralias 'c-basic-offset 'tab-width)
+;; (setq c-default-style "k&r")
+
+;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+
+;; (add-hook 'c++-mode-hook 'irony-mode)
+;; (add-hook 'c-mode-hook 'irony-mode)
+
+;; (add-hook 'c++-mode-hook
+          ;; (lambda ()
+            ;; (setq imenu-generic-expression less-imenu-generic-expression)
+            ;; (irony-mode)))
+
+(eval-after-load 'company
+  '(add-to-list 'company-backends 'company-irony))
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 (set-face-attribute 'default nil
                     :family "Iosevka"
