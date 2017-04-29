@@ -21,6 +21,12 @@
 
 (require-package 'olivetti)
 
+(require-package 'irony)
+(require-package 'company-irony)
+(require-package 'flycheck-irony)
+(require-package 'ggtags)
+(require-package 'helm-gtags)
+
 (require-package 'idomenu)
 
 (require 'uniquify)
