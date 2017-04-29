@@ -4,6 +4,8 @@
                                                 "http://melpa.org/packages/"
                                               "http://melpa.org/packages/")))
 
+(add-to-list 'package-archives '("marmalade" . "https://marmalade-repo.org/packages/"))
+
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
 If NO-REFRESH is non-nil, the available package lists will not be
