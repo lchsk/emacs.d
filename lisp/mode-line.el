@@ -122,7 +122,7 @@
                  (:eval (
                          concat (
                                  replace-regexp-in-string
-                                 "^ Git[:-]"
+                                 "^ Git[@:-]"
                                  ""
 								 (if (stringp vc-mode)
 									 (substring-no-properties vc-mode)
