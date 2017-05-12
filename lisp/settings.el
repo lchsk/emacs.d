@@ -273,4 +273,33 @@
 (add-to-list 'default-frame-alist
              '(font . "Iosevka 10"))
 
+(defun get-random-element (list)
+  "Returns a random element of LIST."
+  (if (and list (listp list))
+      (nth (random (1- (1+ (length list)))) list)
+    (error "Argument to get-random-element not a list or the list is empty")))
+
+(defvar scratch-quotes
+  (list
+   "The universe is not here to please you. - Charles Murtaugh"
+   "Beware of things that are fun to argue. - Eliezer Yudkowsky"
+   "However beautiful the strategy, you should occasionally look at the result. - Winston Churchill"
+   "Truth is much too complicated to allow anything but approximations. - John Von Neumann"
+   "Writing program code is a good way of debugging your thinking. - Bill Venables"
+   "Don't tell me what you value. Show me your budget, and I'll tell you what you value. - Joe Biden quoting his father"
+   "Most haystacks do not even have a needle. - Lorenzo"
+   "Experiment and theory often show remarkable agreement when performed in the same laboratory. - Daniel Bershader"
+   "The important work of moving the world forward does not wait to be done by perfect men. - George Eliot"
+   "It is astonishing what foolish things a man thinking alone can come temporarily to believe. - Keynes"
+   "The purpose of computing is Insight, not numbers. - Richard Hamming"
+   "Sometimes magic is just someone spending more time on something than anyone else might reasonably expect. - Teller"
+   ))
+
+(defun get-random-quote ()
+  (interactive)
+  (get-random-element scratch-quotes))
+
+(setq-default initial-scratch-message
+              (get-random-quote))
+
 (provide 'settings)
