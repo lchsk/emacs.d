@@ -1,6 +1,7 @@
 (require-package 'diff-hl)
 ;; (require-package 'web-mode)
 (require-package 'material-theme)
+(require-package 'rainbow-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'expand-region)
 (require-package 'default-text-scale)

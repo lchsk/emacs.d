@@ -97,6 +97,14 @@
           (lambda ()
             (setq tab-width 4)))
 
+(add-hook 'css-mode-hook
+          (lambda ()
+            (rainbow-mode 1)))
+
+(add-hook 'scss-mode-hook
+          (lambda ()
+            (rainbow-mode 1)))
+
 (global-company-mode 1)
 
 (setq-default tab-width 4)
