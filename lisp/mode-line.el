@@ -1,8 +1,4 @@
 
-;; (insert buffer-file-coding-system)
-
-;; (insert buffer-file-name)
-
 (defmacro with-face (str &rest properties)
     `(propertize ,str 'face (list ,@properties)))
 
@@ -68,11 +64,7 @@
 (setq-default
  mode-line-format
 
-
- '
- (; Position, including warning for 80 columns
-   ; emacsclient [default -- keep?]
-   ;; mode-line-client
+ '(
   ""
         (:propertize (
                  (:eval(
@@ -82,7 +74,6 @@
 					 face mode-line
 					 )
 
-   ; read-only or modified status
    (:eval
     (cond (buffer-read-only
            (propertize "¯\\_(ツ)_/¯ " 'face 'mode-line-read-only-face))
@@ -90,19 +81,11 @@
            (propertize "** " 'face 'mode-line-modified-face))
           (t "")))
    ""
-   ; directory and buffer/file name
-   ;; (:propertize (:eval (shorten-directory default-directory 30))
-                ;; face mode-line-folder-face)
    (:propertize "%b"
                 face mode-line-filename-face)
 
-   ; narrow [default -- keep?]
    "%n"
    " %p"
-   ;; (format "%s" buffer-file-coding-system)
-   ; mode indicators: vc, recursive edit, major mode, minor modes, process, global
-   ;; (vc-mode vc-mode)
-
 
     (:propertize " %l:" face mode-line-position-face)
     (:eval (propertize "%c" 'face
@@ -136,14 +119,8 @@
    (:propertize mode-name
                 face mode-line)
    "%] "
-   ;; (:eval (propertize (format-mode-line minor-mode-alist)
-                      ;; 'face 'mode-line-minor-mode-face))
-   ;; (:propertize mode-line-process
-                ;; face mode-line-process-face)
    (global-mode-string global-mode-string)
    ""
-   ; nyan-mode uses nyan cat as an alternative to %p
-   ;; (:eval (when nyan-mode (list (nyan-create))))
    ))
 
 ;; Helper function
@@ -159,116 +136,5 @@
     (when path
       (setq output (concat "../" output)))
     output))
-
-;; (set-face-background 'mode-line "#f1c40f")
-
-;; (defvar mode-line-col-1 "#ff00ff")
-
-;; (message "%s" mode-line-col-1)
-
-;; (setq-default mode-line-format
-;;  '(
-;;    (:propertize (
-;;                  (:eval(
-;;                         format
-;;                         " %s "
-;;                         (window-numbering-get-number-string)
-;;                         )))
-;;                 'face ((':background (mode-line-col-1)) ':foreground "white"))
-
-;;    (:eval
-;;     (
-;;      when (eql buffer-read-only t)
-;;       (propertize
-;;        " (R) "
-;;        'face '(
-;;                :foreground
-;;                "white"
-;;                :background
-;;                "#eb6841"
-;;                :weight
-;;                bold))))
-
-;;    (:eval
-;;     (propertize
-;;      " %b "
-;;      'face
-;;      (if (buffer-modified-p)
-;;          '(
-;;            :background
-;;            "#CC333F"
-;;            :foreground
-;;            "white"
-;;            :weight
-;;            bold)
-;;        '(
-;;          :background
-;;          "#00A0B0"
-;;          :foreground
-;;          "white"
-;;          :weight
-;;          bold))))
-
-;;    (:propertize (
-;;                  (:eval
-;;                   (format
-;;                    "%s"
-;;                    (if indent-tabs-mode " (T) " " (S) "))))
-;;                 face (
-;;                       :background
-;;                       "#6a4a3c"
-;;                       :foreground
-;;                       "white"))
-
-;;    ;; Major mode
-;;    (:propertize
-;;     " %m "
-;;     face (
-;;           :background
-;;           "#6A4A3C"
-;;           :foreground
-;;           "white"))
-
-;;    (:propertize (
-;;                  (:eval (
-;;                          concat (
-;;                                  replace-regexp-in-string
-;;                                  "^ Git[:-]"
-;;                                  " "
-;;                                  vc-mode
-;;                                  )
-;;                                 " ")))
-;;                 face (
-;;                       :weight
-;;                       normal
-;;                       :background
-;;                       "#EB6841"
-;;                       :foreground
-;;                       "white"))
-
-;;    (:propertize (
-;;                  (:eval (
-;;                          format
-;;                          " %s "
-;;                          (vc-state
-;;                           (buffer-file-name
-;;                            (current-buffer))))))
-;;                 face (
-;;                       :weight:
-;;                       bold
-;;                       :background
-;;                       "#CC333F"
-;;                       :foreground
-;;                       "white"))
-
-;;    (:propertize
-;;     " %l:%c "
-;;     face (
-;;           :background
-;;           "#CC333F"
-;;           :foreground
-;;           "white"
-;;           :weight
-;;           light))))
 
 (provide 'mode-line)
