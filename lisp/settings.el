@@ -148,15 +148,6 @@
 
 (add-hook 'term-mode-hook 'config-term-mode)
 
-;; Keep helm windows at the bottom using popwin
-;; (push '("^\*helm.+\*$" :regexp t) popwin:special-display-config)
-;; (add-hook 'helm-after-initialize-hook (lambda ()
-                                          ;; (popwin:display-buffer helm-buffer t)
-                                          ;; (popwin-mode -1)))
-
-;;  Restore popwin-mode after a Helm session finishes.
-;; (add-hook 'helm-cleanup-hook (lambda () (popwin-mode 1)))
-
 (load "server")
 (unless (server-running-p) (server-start))
 

@@ -1,5 +1,4 @@
 (require-package 'diff-hl)
-;; (require-package 'web-mode)
 (require-package 'material-theme)
 (require-package 'rainbow-mode)
 (require-package 'rainbow-delimiters)
@@ -45,7 +44,6 @@
 (require-package 'imenu-anywhere)
 
 (require-package 'company-jedi)
-;;(require-package 'auto-complete)
 
 (require-package 'flx)
 (require-package 'helm-flx)
@@ -63,9 +61,6 @@
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
-;; (require-package 'popwin)
-;; (require 'popwin)
-
 (require-package 'js2-mode)
 
 (require-package 'realgud)
@@ -73,9 +68,6 @@
 
 (require-package 'multi-term)
 (require 'multi-term)
-
-;;(require-package 'rich-minority)
-;;(require 'rich-minority)
 
 (require-package 'fuzzy-format)
 (require 'fuzzy-format)
@@ -87,7 +79,6 @@
 (require 'plsql)
 
 (require-package 'highlight-symbol)
-;;(require-package 'smart-mode-line)
 
 (require-package 'change-inner)
 
