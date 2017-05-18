@@ -16,6 +16,8 @@
 (require-package 'helm-c-yasnippet)
 (require 'helm-c-yasnippet)
 
+(require-package 'sudo-edit)
+
 (require-package 'org-bullets)
 (require 'org-bullets)
 
