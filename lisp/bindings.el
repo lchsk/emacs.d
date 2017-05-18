@@ -41,21 +41,16 @@
 ;;-----------------------------------------;;
 
 (global-set-key (kbd "M-x") 'helm-M-x)
-;; (bind-key* "M-q" (lambda () (interactive) (ido-imenu-anywhere)))
 (bind-key* "M-q" (lambda () (interactive) (idomenu)))
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-;; (bind-key "M-m" 'helm-mini)
 (bind-key "M-m" 'helm-multi-swoop-all)
-;; (bind-key "M-z" 'helm-projectile)
+(bind-key "M-`" 'helm-projectile)
 (bind-key "M-z" 'helm-mark-ring)
-;; (bind-key "M-p" 'helm-recentf)
 (bind-key* "M-s" 'projectile-recentf)
 (bind-key* "C-M-s" 'ido-recentf-open)
-;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (bind-key "C-x d" 'ido-dired)
-;;(bind-key* "C-c i" 'helm-swoop)
 (bind-key* "" 'helm-multi-swoop-all)
 
 (bind-key* "C-x C-j" 'dired-jump)
@@ -68,14 +63,7 @@
 (global-set-key [f9] 'make-frame)
 (global-set-key [f10] 'delete-frame)
 
-;; (dolist (key '("\C-x\k"
-               ;; ))
-  ;; (global-unset-key key))
-
 (global-unset-key (kbd "C-x k"))
-;; (global-unset-key (kbd "ESC"))
-;; (define-key key-translation-map (kbd "ESC") (kbd "C-g"))
-;; (define-key key-translation-map (kbd "C-<escape>") (kbd "ESC"))
 
 (bind-key* "C-x k" (lambda () (interactive) (kill-buffer)))
 
