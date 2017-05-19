@@ -7,6 +7,7 @@
 (require-package 'git-timemachine)
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
+(require-package 'elfeed)
 
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
