@@ -13,6 +13,8 @@
 (yas-global-mode 1)
 (setq helm-yas-space-match-any-greedy t)
 
+(setq wttrin-default-accept-language '("Accept-Language" . "en-GB"))
+
 (ido-mode 1)
 (ido-everywhere 1)
 (ido-vertical-mode 1)

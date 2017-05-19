@@ -8,6 +8,7 @@
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
 (require-package 'elfeed)
+(require-package 'wttrin)
 
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
