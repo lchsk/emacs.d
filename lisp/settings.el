@@ -178,7 +178,7 @@
 
 (setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
 
-(setq org-bullets-bullet-list '("⚫" "⚪" "⚬" "❍" "○" "☉" "◎" "◉" "○" "◌" "◎" "●" "◦" "◯" "⚬" "⊙" "⊚" "⊛" "∙" "∘"))
+(setq org-bullets-bullet-list '("⚫" "⚪" "⚬" "⚬" "❍" "○" "☉" "◎" "◉" "○" "◌" "◎" "●" "◦" "◯" "⊙" "⊚" "⊛" "∙" "∘"))
 
 (setq org-ellipsis " ➜")
 
@@ -197,7 +197,7 @@
 (set-face-attribute 'org-level-3 nil
                     :weight 'normal
                     :height 1.0
-                    :foreground "#ffffff"
+                    :foreground "#95a5a6"
                     :background "transparent"
                     :box nil)
 
