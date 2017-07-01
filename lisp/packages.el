@@ -25,6 +25,8 @@
 
 (require-package 'olivetti)
 
+(require-package 'csv-mode)
+
 (require-package 'irony)
 (require-package 'company-irony)
 (require-package 'flycheck-irony)

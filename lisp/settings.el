@@ -249,6 +249,8 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 
+(add-hook 'csv-mode-hook (lambda () (font-lock-mode -1)))
+
 ;; (add-hook 'c++-mode-hook 'irony-mode)
 ;; (add-hook 'c-mode-hook 'irony-mode)
 
