@@ -13,6 +13,12 @@
 (yas-global-mode 1)
 (setq helm-yas-space-match-any-greedy t)
 
+(add-to-list 'load-path
+             "~/.emacs.d/private/snippets")
+
+(setq yas-snippet-dirs
+      '("~/.emacs.d/private/snippets"))
+
 (setq wttrin-default-accept-language '("Accept-Language" . "en-GB"))
 
 (ido-mode 1)
