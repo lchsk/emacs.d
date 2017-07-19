@@ -188,12 +188,14 @@ Repeated invocations toggle between the two most recently open buffers."
   (interactive)
   (split-window-right)
   (balance-windows)
+  (other-window 1)
   )
 
 (defun split-window-below-and-rebalance ()
   (interactive)
   (split-window-below)
   (balance-windows)
+  (other-window 1)
   )
 
 (defun delete-window-and-rebalance ()
