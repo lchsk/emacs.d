@@ -130,6 +130,7 @@
 ;; Magit
 (bind-key* "C-S-m" 'magit-status)
 (bind-key* "C-S-l" 'magit-log-head)
+(bind-key* "C-S-c" 'magit-checkout)
 
 (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
