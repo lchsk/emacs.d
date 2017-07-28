@@ -68,7 +68,19 @@
 (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
 
 (add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 4)))
+(add-hook 'js2-mode-hook (lambda ()
+                           (setq js2-basic-offset 4)
+                           (when (> (buffer-size) (* 1024 20))
+                             (linum-mode -1)
+                             (fundamental-mode))))
+
+(defun my-find-file-check-make-large-file-read-only-hook ()
+  "Handle large files"
+  (when (> (buffer-size) (* 1024 50))
+    (linum-mode -1)
+    (fundamental-mode)))
+
+(add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
 
 (setq multi-term-program "/bin/zsh")
 
