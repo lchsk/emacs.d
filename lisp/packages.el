@@ -32,6 +32,7 @@
 (require-package 'flycheck-irony)
 (require-package 'ggtags)
 (require-package 'helm-gtags)
+(require-package 'helm-ag)
 
 (require-package 'idomenu)
 

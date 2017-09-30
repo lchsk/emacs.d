@@ -53,6 +53,8 @@
 (global-set-key (kbd "C-x C-f") 'ido-find-file)
 (bind-key "C-x d" 'ido-dired)
 (bind-key* "" 'helm-multi-swoop-all)
+(bind-key "C-M-&" 'helm-ag)
+(bind-key "C-M-*" 'helm-ag-this-file)
 
 (bind-key* "C-x C-j" 'dired-jump)
 
