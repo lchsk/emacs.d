@@ -96,7 +96,7 @@
    `(company-tooltip-selection ((t (:inherit default :foreground "red"))))
    `(company-tooltip-common ((t (:inherit font-lock-constant-face))))))
 
-(autopair-global-mode)
+;; (autopair-global-mode)
 
 (ws-butler-global-mode)
 
@@ -229,15 +229,21 @@
 ;;  (setq c++-tab-always-indent nil)
   (setq c-basic-offset 4)
   (setq c-indent-level 4)
+  (electric-pair-mode 1)
+  (electric-indent-mode 1)
+  ;; (c-toggle-auto-state 1)
   (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
   (setq tab-width 4)
   (irony-mode)
   (add-to-list 'company-backends 'company-irony company-gtags)
   (setq imenu-generic-expression less-imenu-generic-expression)
   (flycheck-mode 1)
-  (ggtags-mode 1)
-  (helm-gtags-mode)
+  ;; (ggtags-mode 1)
+  (helm-gtags-mode 1)
+  (function-args-mode 1)
   )
+
+(smartparens-global-mode 1)
 
 (custom-set-variables
  '(helm-gtags-path-style 'relative)
@@ -260,7 +266,7 @@
       'irony-completion-at-point-async))
 
 ;; (defvaralias 'c-basic-offset 'tab-width)
-;; (setq c-default-style "k&r")
+;; (setq c-default-style "linux")
 
 ;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)

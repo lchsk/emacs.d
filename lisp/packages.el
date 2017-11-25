@@ -14,6 +14,7 @@
 (require-package 'flycheck-pos-tip)
 
 (require-package 'yasnippet)
+(require-package 'yasnippet-snippets)
 (require 'yasnippet)
 (require-package 'helm-c-yasnippet)
 (require 'helm-c-yasnippet)
@@ -27,12 +28,20 @@
 
 (require-package 'csv-mode)
 
+(require-package 'smartparens)
+(require 'smartparens-config)
+
+;; (require-package 'paredit)
+;; (require 'paredit)
+
 (require-package 'irony)
 (require-package 'company-irony)
 (require-package 'flycheck-irony)
 (require-package 'ggtags)
 (require-package 'helm-gtags)
+(require-package 'helm-gtags)
 (require-package 'helm-ag)
+(require-package 'function-args)
 
 (require-package 'idomenu)
 
@@ -89,8 +98,8 @@
 
 (require-package 'change-inner)
 
-(require-package 'autopair)
-(require 'autopair)
+;; (require-package 'autopair)
+;; (require 'autopair)
 
 (require-package 'ws-butler)
 

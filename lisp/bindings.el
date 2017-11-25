@@ -97,6 +97,14 @@
 (bind-key* "C-c y" 'helm-yas-complete)
 (bind-key* "C-c W" (lambda () (interactive) (kill-whole-line)))
 
+(bind-key "C-x f" 'helm-gtags-find-files)
+(bind-key "C-x t" 'helm-gtags-find-tag)
+(bind-key "C-x Y" 'helm-gtags-find-symbol)
+(bind-key "C-x y" 'helm-gtags-select)
+(bind-key "C-x m" 'helm-gtags-dwim)
+(bind-key "C-x j" 'moo-jump-local)
+(bind-key "C-x j" 'moo-complete)
+
 (bind-key* "C-c ]" 'multi-term-next)
 (bind-key* "C-c [" 'multi-term-prev)
 
