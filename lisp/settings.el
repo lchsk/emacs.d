@@ -10,14 +10,14 @@
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
-(yas-global-mode 1)
-(setq helm-yas-space-match-any-greedy t)
+;; (yas-global-mode 1)
+;; (setq helm-yas-space-match-any-greedy t)
 
-(add-to-list 'load-path
-             "~/.emacs.d/private/snippets")
+;; (add-to-list 'load-path
+;;              "~/.emacs.d/private/snippets")
 
-(setq yas-snippet-dirs
-      '("~/.emacs.d/private/snippets"))
+;; (setq yas-snippet-dirs
+;;       '("~/.emacs.d/private/snippets"))
 
 (setq wttrin-default-accept-language '("Accept-Language" . "en-GB"))
 
@@ -232,15 +232,15 @@
   (electric-pair-mode 1)
   (electric-indent-mode 1)
   ;; (ggtags-mode 1)
-  (helm-gtags-mode 1)
-  (function-args-mode 1)
+  ;; (helm-gtags-mode 1)
+  ;; (function-args-mode 1)
   ;; (c-toggle-auto-state 1)
   (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
   (setq tab-width 4)
-  (irony-mode)
-  (add-to-list 'company-backends 'company-irony company-gtags)
+  ;; (irony-mode)
+  ;; (add-to-list 'company-backends 'company-irony company-gtags)
   (setq imenu-generic-expression less-imenu-generic-expression)
-  (flycheck-mode 1)
+  ;; (flycheck-mode 1)
   )
 
 (smartparens-global-mode 1)

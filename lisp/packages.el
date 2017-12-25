@@ -13,11 +13,11 @@
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
 
-(require-package 'yasnippet)
-(require-package 'yasnippet-snippets)
-(require 'yasnippet)
-(require-package 'helm-c-yasnippet)
-(require 'helm-c-yasnippet)
+;; (require-package 'yasnippet)
+;; (require-package 'yasnippet-snippets)
+;; (require 'yasnippet)
+;; (require-package 'helm-c-yasnippet)
+;; (require 'helm-c-yasnippet)
 
 (require-package 'sudo-edit)
 
