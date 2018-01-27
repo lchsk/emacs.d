@@ -45,7 +45,9 @@
 (bind-key* "M-q" (lambda () (interactive) (helm-imenu)))
 
 (global-set-key (kbd "M-y") 'helm-show-kill-ring)
-(bind-key "M-m" 'helm-multi-swoop-all)
+;; (bind-key "M-m" 'helm-projectile-ag)
+;; (bind-key "M-m" 'helm-multi-swoop-projectile)
+(bind-key "M-m" 'helm-grep-do-git-grep)
 (bind-key "M-`" 'helm-projectile)
 (bind-key "M-z" 'helm-mark-ring)
 (bind-key* "M-s" 'projectile-recentf)
