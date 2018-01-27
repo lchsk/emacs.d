@@ -21,18 +21,18 @@
 (global-set-key (kbd "C-c N") 'next-buffer)
 (global-set-key (kbd "C-c P") 'previous-buffer)
 
-(bind-key* "C-v" (
-                  lambda ()
-                         (interactive)
-                         (scroll-up-command)
-                         (move-to-window-line-middle)
-                         ))
-(bind-key* "M-v" (
-                  lambda ()
-                         (interactive)
-                         (scroll-down-command)
-                         (move-to-window-line-middle)
-                         ))
+;; (bind-key* "C-v" (
+                  ;; lambda ()
+                         ;; (interactive)
+                         ;; (scroll-up-command)
+                         ;; (move-to-window-line-middle)
+                         ;; ))
+;; (bind-key* "M-v" (
+                  ;; lambda ()
+                         ;; (interactive)
+                         ;; (scroll-down-command)
+                         ;; (move-to-window-line-middle)
+                         ;; ))
 
 ;;- ---------------------------------------;;
 ;;                                         ;;
