@@ -215,14 +215,20 @@
 (set-face-attribute 'org-level-3 nil
                     :weight 'normal
                     :height 1.0
-                    :foreground "#95a5a6"
+                    :foreground "#e3c567"
                     :background "transparent"
                     :box nil)
 
+(setq org-todo-keywords
+  '((sequence "TODO" "IN PROGRESS" "DONE")))
+
+(setq org-todo-keyword-faces
+      '(("TODO" . (:foreground "#c1b4ae"))
+        ("IN PROGRESS" . (:foreground "#f19a3e"))
+        ("DONE" . (:foreground "#82d173" :weight bold))))
 (setq less-imenu-generic-expression
       '(
         (nil "\\(\\(void\\|unsigned\\)\s\\(.*\\)(.*)\\)" 1)))
-
 
 (defun my-c++-mode-hook ()
 ;;  (c-set-offset 'substatement-open 0)
