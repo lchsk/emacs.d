@@ -74,13 +74,13 @@
                              (linum-mode -1)
                              (fundamental-mode))))
 
-(defun my-find-file-check-make-large-file-read-only-hook ()
-  "Handle large files"
-  (when (> (buffer-size) (* 1024 50))
-    (linum-mode -1)
-    (fundamental-mode)))
+;; (defun my-find-file-check-make-large-file-read-only-hook ()
+  ;; "Handle large files"
+  ;; (when (> (buffer-size) (* 1024 50))
+    ;; (linum-mode -1)
+    ;; (fundamental-mode)))
 
-(add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
+;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
 
 (setq multi-term-program "/bin/zsh")
 
@@ -143,8 +143,8 @@
                   flycheck-pylintrc "~/.emacs.d/pylintrc")
             ))
 
-(with-eval-after-load 'flycheck
-  (flycheck-pos-tip-mode))
+;; (with-eval-after-load 'flycheck
+  ;; (flycheck-pos-tip-mode))
 
 (setq flycheck-display-errors-delay 0)
 
