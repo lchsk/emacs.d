@@ -13,6 +13,9 @@
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
 
+(require-package 'py-isort)
+(require 'py-isort)
+
 ;; (require-package 'yasnippet)
 ;; (require-package 'yasnippet-snippets)
 ;; (require 'yasnippet)
@@ -58,6 +61,7 @@
 (require-package 'visual-regexp-steroids)
 (require-package 'ido-vertical-mode)
 (require-package 'imenu-anywhere)
+;; (require-package 'imenu-list)
 
 (require-package 'company-jedi)
 
