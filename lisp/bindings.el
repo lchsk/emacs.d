@@ -70,6 +70,7 @@
 
 ;; (bind-key* "C-," 'goto-last-change)
 ;; (bind-key* "C-." 'goto-last-change-reverse)
+(bind-key* "M-@" 'sp-mark-sexp)
 (bind-key* "C-," 'mark-word)
 (bind-key* "C-." 'mark-current-line)
 (bind-key* "C-<" 'mark-end-of-sentence)
