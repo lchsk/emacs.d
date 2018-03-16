@@ -1,8 +1,8 @@
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
-(setq inhibit-startup-screen t)
-(setq initial-scratch-message nil)
-(setq inhibit-startup-echo-area-message t)
+;; (setq inhibit-startup-screen t)
+;; (setq initial-scratch-message nil)
+;; (setq inhibit-startup-echo-area-message t)
 
 (setq-default tab-width 4)
 
@@ -312,27 +312,50 @@
       (nth (random (1- (1+ (length list)))) list)
     (error "Argument to get-random-element not a list or the list is empty")))
 
-(defvar scratch-quotes
-  (list
-   "The universe is not here to please you. - Charles Murtaugh"
-   "Beware of things that are fun to argue. - Eliezer Yudkowsky"
-   "However beautiful the strategy, you should occasionally look at the result. - Winston Churchill"
-   "Truth is much too complicated to allow anything but approximations. - John Von Neumann"
-   "Writing program code is a good way of debugging your thinking. - Bill Venables"
-   "Don't tell me what you value. Show me your budget, and I'll tell you what you value. - Joe Biden quoting his father"
-   "Most haystacks do not even have a needle. - Lorenzo"
-   "Experiment and theory often show remarkable agreement when performed in the same laboratory. - Daniel Bershader"
-   "The important work of moving the world forward does not wait to be done by perfect men. - George Eliot"
-   "It is astonishing what foolish things a man thinking alone can come temporarily to believe. - Keynes"
-   "The purpose of computing is Insight, not numbers. - Richard Hamming"
-   "Sometimes magic is just someone spending more time on something than anyone else might reasonably expect. - Teller"
-   ))
+(require 'cl)
 
-(defun get-random-quote ()
-  (interactive)
-  (get-random-element scratch-quotes))
+(defun* get-closest-pathname (&optional (file "Makefile"))
+  "Determine the pathname of the first instance of FILE starting from the current directory towards root.
+This may not do the correct thing in presence of links. If it does not find FILE, then it shall return the name
+of FILE in the current directory, suitable for creation"
+  (let ((root (expand-file-name "/"))) ; the win32 builds should translate this correctly
+    (expand-file-name file
+		      (loop
+               for d = default-directory then (expand-file-name ".." d)
+			if (file-exists-p (expand-file-name file d))
+			return d
+			if (equal d root)
+			return nil))))
 
-(setq-default initial-scratch-message
-              (get-random-quote))
+(require 'compile)
+
+(add-hook 'c-mode-hook (
+                        lambda () (
+                                   set (make-local-variable 'compile-command)
+                                       (format "make -f %s" (get-closest-pathname)))))
+
+
+;; (defvar scratch-quotes
+  ;; (list
+   ;; "The universe is not here to please you. - Charles Murtaugh"
+   ;; "Beware of things that are fun to argue. - Eliezer Yudkowsky"
+   ;; "However beautiful the strategy, you should occasionally look at the result. - Winston Churchill"
+   ;; "Truth is much too complicated to allow anything but approximations. - John Von Neumann"
+   ;; "Writing program code is a good way of debugging your thinking. - Bill Venables"
+   ;; "Don't tell me what you value. Show me your budget, and I'll tell you what you value. - Joe Biden quoting his father"
+   ;; "Most haystacks do not even have a needle. - Lorenzo"
+   ;; "Experiment and theory often show remarkable agreement when performed in the same laboratory. - Daniel Bershader"
+   ;; "The important work of moving the world forward does not wait to be done by perfect men. - George Eliot"
+   ;; "It is astonishing what foolish things a man thinking alone can come temporarily to believe. - Keynes"
+   ;; "The purpose of computing is Insight, not numbers. - Richard Hamming"
+   ;; "Sometimes magic is just someone spending more time on something than anyone else might reasonably expect. - Teller"
+   ;; ))
+
+;; (defun get-random-quote ()
+  ;; (interactive)
+  ;; (get-random-element scratch-quotes))
+
+;; (setq-default initial-scratch-message
+              ;; (get-random-quote))
 
 (provide 'settings)
