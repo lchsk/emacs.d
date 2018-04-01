@@ -37,6 +37,12 @@
 ;; (require-package 'paredit)
 ;; (require 'paredit)
 
+;; Rust
+(require-package 'rust-mode)
+(require-package 'racer)
+(require-package 'flycheck-rust)
+(require-package 'cargo)
+
 (require-package 'irony)
 (require-package 'company-irony)
 (require-package 'flycheck-irony)
@@ -95,8 +101,8 @@
 (require-package 'cmake-mode)
 (require 'cmake-mode)
 
-(require-package 'plsql)
-(require 'plsql)
+;; (require-package 'plsql)
+;; (require 'plsql)
 
 (require-package 'highlight-symbol)
 
