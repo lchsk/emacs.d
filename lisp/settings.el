@@ -182,7 +182,10 @@
 
 (set-language-environment 'utf-8)
 (setq locale-coding-system 'utf-8)
-(add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+(add-hook 'org-mode-hook (lambda ()
+                           (org-bullets-mode 1)
+                           (outline-show-all)
+                           ))
 
 (prefer-coding-system 'utf-8)
 (setq default-file-name-coding-system 'utf-8)
