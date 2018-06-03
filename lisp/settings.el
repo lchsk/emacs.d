@@ -137,6 +137,10 @@
             (setq python-indent-offset 4)
             (jedi:setup)
             (add-to-list 'company-backends 'company-jedi)
+            (setq jedi:environment-root "jedi")
+            (setq jedi:environment-virtualenv
+                  (append python-environment-virtualenv
+                          '("--python" "python3")))
             (flycheck-mode 1)
             (setq flycheck-checker 'python-pylint
                   flycheck-checker-error-threshold 300
