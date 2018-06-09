@@ -1,8 +1,9 @@
+(require 'compile)
+(require 'color)
+(require 'cl)
+
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
-;; (setq inhibit-startup-screen t)
-;; (setq initial-scratch-message nil)
-;; (setq inhibit-startup-echo-area-message t)
 
 (setq-default tab-width 4)
 
@@ -77,16 +78,13 @@
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
   ;; "Handle large files"
   ;; (when (> (buffer-size) (* 1024 50))
-    ;; (linum-mode -1)
-    ;; (fundamental-mode)))
+    ;; (linum-mode -1)))
 
 ;; (add-hook 'find-file-hook 'my-find-file-check-make-large-file-read-only-hook)
 
 (setq multi-term-program "/bin/zsh")
 
 (setq backup-directory-alist `(("." . "~/.saves")))
-
-(require 'color)
 
 (let ((bg (face-attribute 'default :background)))
   (custom-set-faces
@@ -144,11 +142,7 @@
             (flycheck-mode 1)
             (setq flycheck-checker 'python-pylint
                   flycheck-checker-error-threshold 300
-                  flycheck-pylintrc "~/.emacs.d/pylintrc")
-            ))
-
-;; (with-eval-after-load 'flycheck
-  ;; (flycheck-pos-tip-mode))
+                  flycheck-pylintrc "~/.emacs.d/pylintrc")))
 
 (setq flycheck-display-errors-delay 0)
 
@@ -291,15 +285,11 @@
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 
+(add-hook 'c-mode-hook (
+                        lambda () (set (make-local-variable 'compile-command)
+                                       (format "make -f %s" (get-closest-pathname)))))
+
 (add-hook 'csv-mode-hook (lambda () (font-lock-mode -1)))
-
-;; (add-hook 'c++-mode-hook 'irony-mode)
-;; (add-hook 'c-mode-hook 'irony-mode)
-
-;; (add-hook 'c++-mode-hook
-          ;; (lambda ()
-            ;; (setq imenu-generic-expression less-imenu-generic-expression)
-            ;; (irony-mode)))
 
 (eval-after-load 'company
   '(add-to-list 'company-backends 'company-irony))
@@ -318,14 +308,6 @@
 (add-to-list 'default-frame-alist
              '(font . "Iosevka"))
 
-(defun get-random-element (list)
-  "Returns a random element of LIST."
-  (if (and list (listp list))
-      (nth (random (1- (1+ (length list)))) list)
-    (error "Argument to get-random-element not a list or the list is empty")))
-
-(require 'cl)
-
 (defun* get-closest-pathname (&optional (file "Makefile"))
   "Determine the pathname of the first instance of FILE starting from the current directory towards root.
 This may not do the correct thing in presence of links. If it does not find FILE, then it shall return the name
@@ -338,36 +320,5 @@ of FILE in the current directory, suitable for creation"
 			return d
 			if (equal d root)
 			return nil))))
-
-(require 'compile)
-
-(add-hook 'c-mode-hook (
-                        lambda () (
-                                   set (make-local-variable 'compile-command)
-                                       (format "make -f %s" (get-closest-pathname)))))
-
-
-;; (defvar scratch-quotes
-  ;; (list
-   ;; "The universe is not here to please you. - Charles Murtaugh"
-   ;; "Beware of things that are fun to argue. - Eliezer Yudkowsky"
-   ;; "However beautiful the strategy, you should occasionally look at the result. - Winston Churchill"
-   ;; "Truth is much too complicated to allow anything but approximations. - John Von Neumann"
-   ;; "Writing program code is a good way of debugging your thinking. - Bill Venables"
-   ;; "Don't tell me what you value. Show me your budget, and I'll tell you what you value. - Joe Biden quoting his father"
-   ;; "Most haystacks do not even have a needle. - Lorenzo"
-   ;; "Experiment and theory often show remarkable agreement when performed in the same laboratory. - Daniel Bershader"
-   ;; "The important work of moving the world forward does not wait to be done by perfect men. - George Eliot"
-   ;; "It is astonishing what foolish things a man thinking alone can come temporarily to believe. - Keynes"
-   ;; "The purpose of computing is Insight, not numbers. - Richard Hamming"
-   ;; "Sometimes magic is just someone spending more time on something than anyone else might reasonably expect. - Teller"
-   ;; ))
-
-;; (defun get-random-quote ()
-  ;; (interactive)
-  ;; (get-random-element scratch-quotes))
-
-;; (setq-default initial-scratch-message
-              ;; (get-random-quote))
 
 (provide 'settings)
