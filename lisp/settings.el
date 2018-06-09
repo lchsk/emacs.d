@@ -11,8 +11,8 @@
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
-;; (yas-global-mode 1)
-;; (setq helm-yas-space-match-any-greedy t)
+(yas-global-mode 1)
+(setq helm-yas-space-match-any-greedy t)
 
 ;; (add-to-list 'load-path
 ;;              "~/.emacs.d/private/snippets")

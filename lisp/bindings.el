@@ -94,7 +94,7 @@
 
 (bind-key* "C-c r" 'replace-string)
 (bind-key* "C-c l" 'copy-line)
-;; (bind-key* "C-c y" 'helm-yas-complete)
+(bind-key* "C-c y" 'helm-yas-complete)
 (bind-key* "C-c W" (lambda () (interactive) (kill-whole-line)))
 
 (bind-key* "C-x 7" 'make-frame)
