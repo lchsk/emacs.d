@@ -182,13 +182,18 @@
 
 (setq dired-listing-switches "-alh")
 
-;; Org-mode
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;                            ;;
+;;          Org-mode          ;;
+;;                            ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (set-language-environment 'utf-8)
 (setq locale-coding-system 'utf-8)
 (add-hook 'org-mode-hook (lambda ()
                            (org-bullets-mode 1)
                            (outline-show-all)
+                           (visual-line-mode 1)
                            ))
 
 (prefer-coding-system 'utf-8)
@@ -304,14 +309,14 @@
 
 (set-face-attribute 'default nil
                     :family "Iosevka"
-                    :height 109
+                    :height 110
                     :weight 'normal
                     :width 'normal)
 
-(set-frame-font "Iosevka 10" nil t)
+(set-frame-font "Iosevka" nil t)
 
 (add-to-list 'default-frame-alist
-             '(font . "Iosevka 10"))
+             '(font . "Iosevka"))
 
 (defun get-random-element (list)
   "Returns a random element of LIST."
