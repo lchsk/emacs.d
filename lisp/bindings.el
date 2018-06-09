@@ -99,18 +99,17 @@
 
 (bind-key* "C-x 7" 'make-frame)
 (bind-key* "C-x 9" 'delete-frame)
+
 (bind-key "C-x f" 'helm-gtags-find-files)
 (bind-key "C-x t" 'helm-gtags-find-tag)
 (bind-key "C-x Y" 'helm-gtags-find-symbol)
 (bind-key "C-x y" 'helm-gtags-select)
 (bind-key "C-x m" 'helm-gtags-dwim)
-(bind-key "C-x j" 'moo-jump-local)
-;; (bind-key "C-x j" 'moo-complete)
+(bind-key "C-x j" 'helm-gtags-parse-file)
+
 (bind-key* "C-x r" 'revert-this-buffer)
 
 (bind-key* "C-c ]" 'helm-ag)
-;; (bind-key* "C-c ]" 'multi-term-next)
-;; (bind-key* "C-c [" 'multi-term-prev)
 
 (bind-key* "C-c C" 'calendar)
 (bind-key* "C-c E" 'eval-buffer)
@@ -119,11 +118,8 @@
 (bind-key* "C-c J" '(lambda () (interactive) (join-line 1)))
 
 (bind-key* "C-c O" 'change-outer)
-;; (bind-key* "C-c P" 'switch-to-previous-buffer)
 (bind-key* "C-c R" 'align-regexp)
-;; (bind-key* "C-c S" 'smerge-mode)
 (bind-key* "C-c T" 'toggle-window-split)
-;; (bind-key* "C-c N" 'smerge-next)
 (bind-key* "C-`" 'dired-open-term)
 
 (bind-key* "C-c w" 'save-buffer-tabs)
