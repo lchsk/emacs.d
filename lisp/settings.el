@@ -4,6 +4,7 @@
 
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
+(setq ring-bell-function 'ignore)
 
 (setq-default tab-width 4)
 
