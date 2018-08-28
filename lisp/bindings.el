@@ -132,6 +132,9 @@
 (bind-key* "C-S-t" 'mc/mark-previous-like-this)
 (bind-key* "C-S-x" 'mc/mark-all-like-this)
 
+(global-set-key (kbd "C-x C-m") 'helm-M-x)
+(global-set-key (kbd "C-c C-m") 'helm-M-x)
+
 (global-set-key (kbd "<C-up>") 'shrink-window)
 (global-set-key (kbd "<C-down>") 'enlarge-window)
 (global-set-key (kbd "<C-return>") 'shrink-window-horizontally)
