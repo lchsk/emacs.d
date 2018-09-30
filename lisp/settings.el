@@ -128,6 +128,8 @@
 
 (setq-default tab-width 4)
 
+(setq c-basic-offset 4)
+
 (add-hook 'python-mode-hook
           (lambda ()
             (setq c-basic-offset 4)
