@@ -13,6 +13,8 @@
 (require-package 'flycheck)
 (require-package 'flycheck-pos-tip)
 
+(require 'helm-xstarter)
+
 (require-package 'py-isort)
 (require 'py-isort)
 
