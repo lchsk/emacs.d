@@ -13,7 +13,7 @@
                  (window-body-width))
               (progn
                 (concat (with-face sl/drop-str
-                                   :foreground mode-line-col-1
+                                   ;; :foreground mode-line-col-1
                                    :weight 'normal
                                    :height 90
                                    )
@@ -23,30 +23,30 @@
                                                  (length sl/drop-str))
                                               (length sl/header))
                                    :weight 'normal
-                                   :foreground mode-line-col-2
+                                   ;; :foreground mode-line-col-2
                                    :height 90
                                    )))
             (concat (with-face sl/header
-                               :foreground mode-line-col-2
+                               ;; :foreground mode-line-col-2
                                :weight 'normal
 							   :height 90
                                )
                     (with-face (file-name-nondirectory buffer-file-name)
                            :weight 'normal
                            :height 90
-                           :foreground mode-line-col-1
+                           ;; :foreground mode-line-col-1
                            )
 
                     ))
         (concat (with-face sl/header
                            :weight 'normal
-                           :foreground mode-line-col-2
+                           ;; :foreground mode-line-col-2
 						   :height 90
                            )
                 (with-face (file-name-nondirectory buffer-file-name)
                            :weight 'normal
                            :height 90
-                           :foreground mode-line-col-1
+                           ;; :foreground mode-line-col-1
                            )))))
 
   (defun sl/display-header ()
