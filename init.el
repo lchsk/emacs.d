@@ -16,6 +16,10 @@
 
 (require 'theme)
 
+;; Languages
+
+(require 'cpp)
+
 (require 'settings)
 (require 'utility-funcs)
 (require 'mode-line)
