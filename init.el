@@ -14,6 +14,8 @@
 (require 'fonts)
 (require 'packages)
 
+(require 'theme)
+
 (require 'settings)
 (require 'utility-funcs)
 (require 'mode-line)

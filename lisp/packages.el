@@ -1,5 +1,5 @@
 (require-package 'diff-hl)
-(require-package 'material-theme)
+;; (require-package 'material-theme)
 (require-package 'rainbow-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'expand-region)
@@ -141,7 +141,7 @@
 
 (require 'helm-config)
 
-(load-theme 'material t)
+;; (load-theme 'material t)
 
 (add-hook 'after-make-frame-functions
           '(lambda (frame)
