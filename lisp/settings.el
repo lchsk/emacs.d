@@ -32,15 +32,15 @@
 (setq ido-vertical-define-keys 'C-n-and-C-p-only)
 (setq ido-vertical-show-count t)
 (setq ido-use-faces t)
-(set-face-attribute 'ido-vertical-first-match-face nil
-                    :background nil
-                    :foreground mode-line-col-1)
-(set-face-attribute 'ido-vertical-only-match-face nil
-                    :background nil
-                    :foreground mode-line-col-1)
-(set-face-attribute 'ido-vertical-match-face nil
-                    :foreground mode-line-col-1
-                    :underline nil)
+;; (set-face-attribute 'ido-vertical-first-match-face nil
+;;                     :background nil
+;;                     :foreground mode-line-col-1)
+;; (set-face-attribute 'ido-vertical-only-match-face nil
+;;                     :background nil
+;;                     :foreground mode-line-col-1)
+;; (set-face-attribute 'ido-vertical-match-face nil
+;;                     :foreground mode-line-col-1
+;;                     :underline nil)
 
 (remove-hook 'kill-buffer-query-functions 'server-kill-buffer-query-function)
 
