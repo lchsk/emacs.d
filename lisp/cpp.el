@@ -1,22 +1,8 @@
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 (defun my-c++-mode-hook ()
-;;  (c-set-offset 'substatement-open 0)
-;;  (setq c++-tab-always-indent nil)
-  (setq c-basic-offset 2)
-  (setq c-indent-level 2)
-  (setq tab-width 2)
-  ;; (electric-pair-mode 1)
-  ;; (electric-indent-mode 1)
-  ;; (ggtags-mode 1)
-  ;; (helm-gtags-mode 1)
-  ;; (function-args-mode 1)
-  ;; (c-toggle-auto-state 1)
-  ;; (setq tab-stop-list '(4 8 12 16 20 24 28 32 36 40 44 48 52 56 60))
+  (global-set-key (kbd "C-x w") 'add-newlines-with-point-between))
 
-  ;; (irony-mode)
-  ;; (add-to-list 'company-backends 'company-irony company-gtags)
-  ;; (setq imenu-generic-expression less-imenu-generic-expression)
-  )
+
+(add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
 (provide 'cpp)

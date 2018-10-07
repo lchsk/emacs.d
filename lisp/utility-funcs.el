@@ -337,4 +337,18 @@ instead, but there should be little or no difference."
   (interactive)
   (setq recentf-list '()))
 
+
+(defun add-newlines-with-point-between ()
+  "Add two newlines and put the cursor at the right indentation
+between them if a newline is attempted when the cursor is between
+two curly braces, otherwise do a regular newline and indent"
+  (interactive)
+  (if (and (equal (char-before) 123) ; {
+           (equal (char-after) 125)) ; }
+      (progn (newline-and-indent)
+             (split-line)
+             (indent-for-tab-command))
+    (newline-and-indent)))
+
+
 (provide 'utility-funcs)

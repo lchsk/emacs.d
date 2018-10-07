@@ -124,11 +124,11 @@
           (lambda ()
             (rainbow-mode 1)))
 
-(global-company-mode 1)
+;; (global-company-mode 1)
 
-(setq-default tab-width 4)
+;; (setq-default tab-width 4)
 
-(setq c-basic-offset 4)
+;; (setq c-basic-offset 4)
 
 (add-hook 'python-mode-hook
           (lambda ()
@@ -240,12 +240,12 @@
         (nil "\\(\\(void\\|unsigned\\)\s\\(.*\\)(.*)\\)" 1)))
 
 
-(smartparens-global-mode 1)
+;; (smartparens-global-mode 1)
 
-(custom-set-variables
- '(helm-gtags-path-style 'relative)
- '(helm-gtags-ignore-case t)
- '(helm-gtags-auto-update t))
+;; (custom-set-variables
+ ;; '(helm-gtags-path-style 'relative)
+ ;; '(helm-gtags-ignore-case t)
+ ;; '(helm-gtags-auto-update t))
 
 ;; (with-eval-after-load 'helm-gtags
   ;; (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
@@ -256,23 +256,23 @@
   ;; (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
   ;; (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
 
- (defun my-irony-mode-hook ()
-    (define-key irony-mode-map [remap completion-at-point]
-      'irony-completion-at-point-async)
-    (define-key irony-mode-map [remap complete-symbol]
-      'irony-completion-at-point-async))
+ ;; (defun my-irony-mode-hook ()
+    ;; (define-key irony-mode-map [remap completion-at-point]
+      ;; 'irony-completion-at-point-async)
+    ;; (define-key irony-mode-map [remap complete-symbol]
+      ;; 'irony-completion-at-point-async))
 
 ;; (defvaralias 'c-basic-offset 'tab-width)
 ;; (setq c-default-style "linux")
 
 ;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
 
-(add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-(add-hook 'irony-mode-hook 'my-irony-mode-hook)
+;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 
-(add-hook 'c-mode-hook (
-                        lambda () (set (make-local-variable 'compile-command)
-                                       (format "make -f %s" (get-closest-pathname)))))
+;; (add-hook 'c-mode-hook (
+                        ;; lambda () (set (make-local-variable 'compile-command)
+                                       ;; (format "make -f %s" (get-closest-pathname)))))
 
 (add-hook 'csv-mode-hook (lambda () (font-lock-mode -1)))
 
