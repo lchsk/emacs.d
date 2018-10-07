@@ -52,7 +52,7 @@
 (bind-key "M-z" 'helm-mark-ring)
 ;; (bind-key* "M-s" 'projectile-recentf)
 (bind-key* "M-s" 'ido-recentf-open)
-(global-set-key (kbd "C-x C-f") 'ido-find-file)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
 (bind-key "C-x d" 'ido-dired)
 ;; (bind-key* "" 'helm-multi-swoop-all)
 ;; (bind-key "C-M-*" 'helm-ag-this-file)
