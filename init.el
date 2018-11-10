@@ -19,6 +19,7 @@
 ;; Languages
 
 (require 'cpp)
+(require 'writing-mode)
 
 (require 'settings)
 (require 'utility-funcs)
