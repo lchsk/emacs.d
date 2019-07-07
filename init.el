@@ -20,6 +20,7 @@
 ;; Languages
 
 (require 'cpp)
+(require 'go)
 (require 'writing-mode)
 
 (require 'settings)

@@ -133,9 +133,6 @@
 (require-package 'goto-chg)
 (require 'goto-chg)
 
-(require-package 'go-mode)
-(require 'go-mode)
-
 (require-package 'haskell-mode)
 (require 'haskell-mode)
 
