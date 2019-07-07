@@ -10,6 +10,7 @@
 (defconst *spell-check-support-enabled* nil)
 
 (require 'init-elpa)
+(require 'init-global)
 
 (require 'fonts)
 (require 'packages)
