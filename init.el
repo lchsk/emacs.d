@@ -19,8 +19,9 @@
 
 ;; Languages
 
-(require 'cpp)
-(require 'go)
+(require 'python-mode)
+(require 'cpp-mode)
+(require 'go-mode)
 (require 'writing-mode)
 
 (require 'settings)

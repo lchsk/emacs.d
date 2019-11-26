@@ -15,8 +15,8 @@
 
 (require 'helm-xstarter)
 
-(require-package 'py-isort)
-(require 'py-isort)
+;; (require-package 'py-isort)
+;; (require 'py-isort)
 
 (require-package 'yasnippet)
 (require-package 'yasnippet-snippets)
