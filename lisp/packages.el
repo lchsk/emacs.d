@@ -15,8 +15,6 @@
 
 (require-package 'sudo-edit)
 
-(require-package 'olivetti)
-
 (require-package 'csv-mode)
 
 (require-package 'smartparens)
@@ -102,7 +100,6 @@
 (require-package 'bind-key)
 (require 'bind-key)
 
-(require-package 'magit)
 (require-package 'window-numbering)
 
 (require-package 'buffer-move)
