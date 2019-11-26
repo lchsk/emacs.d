@@ -21,4 +21,4 @@
                   flycheck-pylintrc "~/.emacs.d/pylintrc")))
 
 
-(provide 'python-mode)
+(provide 'conf-python)

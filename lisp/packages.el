@@ -1,10 +1,9 @@
 (require-package 'diff-hl)
-;; (require-package 'material-theme)
 (require-package 'rainbow-mode)
 (require-package 'rainbow-delimiters)
 (require-package 'expand-region)
 (require-package 'default-text-scale)
-(require-package 'git-timemachine)
+
 (require-package 'fill-column-indicator)
 (require-package 'undo-tree)
 (require-package 'elfeed)
@@ -15,19 +14,7 @@
 
 (require 'helm-xstarter)
 
-;; (require-package 'py-isort)
-;; (require 'py-isort)
-
-(require-package 'yasnippet)
-(require-package 'yasnippet-snippets)
-(require 'yasnippet)
-(require-package 'helm-c-yasnippet)
-(require 'helm-c-yasnippet)
-
 (require-package 'sudo-edit)
-
-(require-package 'org-bullets)
-(require 'org-bullets)
 
 (require-package 'olivetti)
 
@@ -38,12 +25,6 @@
 
 ;; (require-package 'paredit)
 ;; (require 'paredit)
-
-;; Rust
-(require-package 'rust-mode)
-(require-package 'racer)
-(require-package 'flycheck-rust)
-(require-package 'cargo)
 
 (require-package 'irony)
 (require-package 'company-irony)
@@ -89,8 +70,6 @@
 (require-package 'yaml-mode)
 (require 'yaml-mode)
 
-(require-package 'js2-mode)
-
 (require-package 'realgud)
 (require 'realgud)
 
@@ -133,12 +112,7 @@
 (require-package 'goto-chg)
 (require 'goto-chg)
 
-(require-package 'haskell-mode)
-(require 'haskell-mode)
-
 (require 'helm-config)
-
-;; (load-theme 'material t)
 
 (add-hook 'after-make-frame-functions
           '(lambda (frame)

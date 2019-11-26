@@ -6,4 +6,4 @@
 		  (gofmt-before-save))
 		  )
 
-(provide 'go-mode)
+(provide 'conf-go)

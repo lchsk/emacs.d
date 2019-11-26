@@ -12,15 +12,6 @@
 (tool-bar-mode -1)
 (set-scroll-bar-mode nil)
 
-(yas-global-mode 1)
-(setq helm-yas-space-match-any-greedy t)
-
-;; (add-to-list 'load-path
-;;              "~/.emacs.d/private/snippets")
-
-;; (setq yas-snippet-dirs
-;;       '("~/.emacs.d/private/snippets"))
-
 (setq wttrin-default-accept-language '("Accept-Language" . "en-GB"))
 
 (ido-mode 1)
@@ -69,13 +60,6 @@
 
 (add-to-list 'auto-mode-alist '("\\.html\\'" . html-mode))
 
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-hook 'js2-mode-hook (lambda ()
-                           (setq js2-basic-offset 4)
-                           (when (> (buffer-size) (* 1024 20))
-                             (linum-mode -1)
-                             (fundamental-mode))))
-
 ;; (defun my-find-file-check-make-large-file-read-only-hook ()
   ;; "Handle large files"
   ;; (when (> (buffer-size) (* 1024 50))
@@ -106,8 +90,6 @@
             (rainbow-delimiters-mode)
             (fci-mode)
             (linum-mode)))
-
-(defvaralias 'js-indent-level 'tab-width)
 
 (add-to-list 'auto-mode-alist '("\\.pkb\\'" . sql-mode))
 (add-to-list 'auto-mode-alist '("\\.pks\\'" . sql-mode))
@@ -177,100 +159,6 @@
 
 (setq dired-listing-switches "-alh")
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;                            ;;
-;;          Org-mode          ;;
-;;                            ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(set-language-environment 'utf-8)
-(setq locale-coding-system 'utf-8)
-(add-hook 'org-mode-hook (lambda ()
-                           (org-bullets-mode 1)
-                           (outline-show-all)
-                           (visual-line-mode 1)
-                           ))
-
-(prefer-coding-system 'utf-8)
-(setq default-file-name-coding-system 'utf-8)
-(set-default-coding-systems 'utf-8)
-(set-terminal-coding-system 'utf-8)
-(set-keyboard-coding-system 'utf-8)
-
-(if (boundp buffer-file-coding-system)
-    (setq buffer-file-coding-system 'utf-8)
-  (setq default-buffer-file-coding-system 'utf-8))
-
-(setq x-select-request-type '(UTF8_STRING COMPOUND_TEXT TEXT STRING))
-
-(setq org-bullets-bullet-list '("⚫" "⚪" "⚬" "⚬" "❍" "○" "☉" "◎" "◉" "○" "◌" "◎" "●" "◦" "◯" "⊙" "⊚" "⊛" "∙" "∘"))
-
-(setq org-ellipsis " ➜")
-
-(set-face-attribute 'org-level-1 nil
-                    :weight 'bold
-                    :height 1.0
-                    :foreground "#f1c40f"
-                    :background "transparent"
-                    :box nil)
-(set-face-attribute 'org-level-2 nil
-                    :weight 'normal
-                    :height 1.0
-                    :foreground "#2ecc71"
-                    :background "transparent"
-                    :box nil)
-(set-face-attribute 'org-level-3 nil
-                    :weight 'normal
-                    :height 1.0
-                    :foreground "#e3c567"
-                    :background "transparent"
-                    :box nil)
-
-(setq org-todo-keywords
-  '((sequence "TODO" "IN PROGRESS" "DONE")))
-
-(setq org-todo-keyword-faces
-      '(("TODO" . (:foreground "#c1b4ae"))
-        ("IN PROGRESS" . (:foreground "#f19a3e"))
-        ("DONE" . (:foreground "#82d173" :weight bold))))
-(setq less-imenu-generic-expression
-      '(
-        (nil "\\(\\(void\\|unsigned\\)\s\\(.*\\)(.*)\\)" 1)))
-
-
-;; (smartparens-global-mode 1)
-
-;; (custom-set-variables
- ;; '(helm-gtags-path-style 'relative)
- ;; '(helm-gtags-ignore-case t)
- ;; '(helm-gtags-auto-update t))
-
-;; (with-eval-after-load 'helm-gtags
-  ;; (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-  ;; (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-  ;; (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-  ;; (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
-  ;; (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-  ;; (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-  ;; (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack))
-
- ;; (defun my-irony-mode-hook ()
-    ;; (define-key irony-mode-map [remap completion-at-point]
-      ;; 'irony-completion-at-point-async)
-    ;; (define-key irony-mode-map [remap complete-symbol]
-      ;; 'irony-completion-at-point-async))
-
-;; (defvaralias 'c-basic-offset 'tab-width)
-;; (setq c-default-style "linux")
-
-;; (add-hook 'c-mode-common-hook 'my-c-mode-common-hook)
-
-;; (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
-;; (add-hook 'irony-mode-hook 'my-irony-mode-hook)
-
-;; (add-hook 'c-mode-hook (
-                        ;; lambda () (set (make-local-variable 'compile-command)
-                                       ;; (format "make -f %s" (get-closest-pathname)))))
 
 (add-hook 'csv-mode-hook (lambda () (font-lock-mode -1)))
 

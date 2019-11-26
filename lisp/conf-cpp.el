@@ -11,4 +11,4 @@
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
 
-(provide 'cpp-mode)
+(provide 'conf-cpp)

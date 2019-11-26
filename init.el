@@ -19,10 +19,16 @@
 
 ;; Languages
 
-(require 'python-mode)
-(require 'cpp-mode)
-(require 'go-mode)
-(require 'writing-mode)
+(require 'conf-python)
+(require 'conf-cpp)
+(require 'conf-go)
+(require 'conf-writing)
+(require 'conf-git)
+(require 'conf-rust)
+(require 'conf-js)
+(require 'conf-haskell)
+(require 'conf-yasnippet)
+(require 'conf-org)
 
 (require 'settings)
 (require 'utility-funcs)
