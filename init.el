@@ -12,7 +12,6 @@
 (require 'init-elpa)
 (require 'init-global)
 
-(require 'fonts)
 (require 'packages)
 
 (require 'theme)
