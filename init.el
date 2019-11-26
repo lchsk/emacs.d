@@ -33,7 +33,6 @@
 (require 'utility-funcs)
 (require 'mode-line)
 (require 'bindings)
-(require 'feeds)
 
 (require 'server)
 (unless (server-running-p)
