@@ -1,1 +1,14 @@
 *~
+\#*
+.*
+session*
+games*
+eshell*
+elpa*
+bookmarks
+ido.last
+network-security.data
+projectile-bookmarks.eld
+recentf
+semanticdb/
+url/
