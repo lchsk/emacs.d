@@ -1,6 +1,7 @@
 (require 'compile)
 (require 'color)
 (require 'cl)
+(require 'dired-x)
 
 (global-diff-hl-mode 1)
 (window-numbering-mode 1)
