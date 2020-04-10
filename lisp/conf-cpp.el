@@ -10,5 +10,6 @@
   (setq c-basic-offset tab-width))
 
 (add-hook 'c++-mode-hook 'my-c++-mode-hook)
+(add-hook 'c-mode-hook 'my-c++-mode-hook)
 
 (provide 'conf-cpp)
