@@ -169,16 +169,8 @@
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
-(set-face-attribute 'default nil
-                    :family "Iosevka"
-                    :height 110
-                    :weight 'normal
-                    :width 'normal)
-
-(set-frame-font "Iosevka" nil t)
-
-(add-to-list 'default-frame-alist
-             '(font . "Iosevka"))
+(add-to-list 'default-frame-alist '(font . "Iosevka-16" ))
+(set-face-attribute 'default t :font "Iosevka-16" )
 
 (defun* get-closest-pathname (&optional (file "Makefile"))
   "Determine the pathname of the first instance of FILE starting from the current directory towards root.
