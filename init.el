@@ -28,6 +28,7 @@
 (require 'conf-haskell)
 (require 'conf-yasnippet)
 (require 'conf-org)
+(require 'conf-docker)
 
 (require 'settings)
 (require 'utility-funcs)
