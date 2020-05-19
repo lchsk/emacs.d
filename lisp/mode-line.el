@@ -101,6 +101,14 @@
                    face mode-line
                 )
 
+      (:propertize (
+                 (:eval
+                  (format
+                   "%s"
+                   (if (bound-and-true-p evil-mode) "[V] " "[E] "))))
+                   face mode-line
+                )
+
        (:propertize (
                  (:eval (
                          concat (
